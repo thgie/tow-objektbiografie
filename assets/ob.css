@@ -244,7 +244,7 @@ ol {
 }
 .popup-buttons {
     width: 100%;
-    padding: 40px 0 0 130px;
+    /* padding: 40px 0 0 130px; */
 }
 .popup-button {
     position: absolute;
