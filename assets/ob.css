@@ -285,6 +285,9 @@ ol {
     -o-transition: .5s;
     transition: .5s;
 }
+.popup.intro {
+    background: rgba(255, 255, 255, 0.9);
+}
 .popup.open {
     opacity: 1;
     right: 0;

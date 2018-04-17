@@ -65,6 +65,14 @@ window.addEventListener('scroll', function(){
 					scrolls[s].classList.add('no')
 				}
 			}
+			if(scrolls[s].dataset.scroll == 'intro'){
+				if(scrolls[s].getBoundingClientRect().top < c + 400 && scrolls[s].dataset.opened == 'false') {
+					scrolls[s].classList.add('open')
+					scrolls[s].dataset.opened = 'true'
+				} else {
+
+				}
+			}
 		}
 	}
 })
