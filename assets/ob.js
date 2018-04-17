@@ -44,7 +44,11 @@ var scrolls = document.querySelectorAll('[data-scroll]')
 for(var s in scrolls){
 	if(scrolls[s].style != undefined){ scrolls[s].classList.add('no') }
 }
-
+/*window.addEventListener('mouseover', function(ev){
+	if(ev.target.classList.contains('with-scroll')){
+		ev.target.focus()
+	}
+})*/
 window.addEventListener('scroll', function(){
 	var st = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
 		wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,

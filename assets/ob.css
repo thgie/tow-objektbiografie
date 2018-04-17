@@ -136,14 +136,15 @@ h2.objectbiography > span {
     padding-left: 125px;
     padding-right: 125px;
 }
-.header p span, h4, .home h4 span {
+.header p span, h4, .home h3 span {
     background: black;
     color: white;
     box-shadow: 5px 0 0 black, -5px 0 0 black;
     padding: 3px 0;
 }
-.home h4 {
+.home h3.headline {
     position: absolute;
+    top: auto;
     left: 40px;
     bottom: 40px;
     background: none;
@@ -516,6 +517,7 @@ h3 {
     transform: rotate(0);
     margin-top: 30px;
     margin-bottom: 10px;
+    line-height: 38px;
 }
 h4 {
     display: inline-block;
