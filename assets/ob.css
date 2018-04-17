@@ -124,6 +124,10 @@ h2.objectbiography > span {
     transform: rotate(-5deg);
     margin-bottom: 50px;
 }
+.home h1 {
+    width: 90%;
+    margin-left: 5%;
+}
 .header p {
     padding-left: 125px;
     padding-right: 125px;
@@ -516,7 +520,7 @@ h4 {
     font-weight: 300;
 }
 .home h4 {
-    line-height: 28px;
+    line-height: 34px;
 }
 p, ul, ol {
     font-size: 20px;
@@ -556,12 +560,15 @@ p + ul {
     position: relative;
     overflow: hidden;
 }
-.home .vimeo {
+.home video {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     width: 100%;
     height: 100%;
+    -webkit-transform: translateX(-50.5%);
+    -ms-transform: translateX(-50.5%);
+    transform: translateX(-50.5%);
     pointer-events: none;
 }
 .vimeo embed, .vimeo iframe, .vimeo object, .vimeo video {

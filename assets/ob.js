@@ -87,6 +87,30 @@ setTimeout(function(){
 	}
 }, 5000)
 
+/* video background */
+var timeoutId, video_aspect = 1440 / 800;
+
+function video_background() {
+	var window_aspect = window.innerWidth / window.innerHeight,
+		videos = document.querySelectorAll('.home video');
+
+	for(var v in videos){
+		if (window_aspect > video_aspect) {
+			videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
+			videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
+		} else {
+			videos[v].style.width = 'auto'
+			videos[v].style.height = 100 + '%'
+		}
+	}
+}
+
+window.addEventListener('resize', function() {
+	video_background()
+});
+
+video_background()
+
 /* coloring prototype */
 /*var units = document.querySelectorAll('.sis-unit'), unit_width = 0;
 for(var u in units){
