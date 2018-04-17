@@ -27,6 +27,10 @@ h2.objectbiography {
     font-size: 34px;
     line-height: 44px;
     transform: rotate(-5deg);
+    z-index: 1000;
+}
+.home h2.objectbiography {
+    position: fixed;
 }
 h2.objectbiography > span {
     background: black;
@@ -147,9 +151,11 @@ h2.objectbiography > span {
     box-shadow: none;
 }
 .article {
+    height: 100%;
     padding-bottom: 50px;
 }
 .article-main {
+    height: 100%;
     /* width: 800px;
     padding-right: 100px; */
 }
@@ -230,39 +236,36 @@ ol {
 /* popup */
 .popup-wrapper {
     position: relative;
-    min-height: 600px;
+    min-height: 850px;
+    height: 90%;
     border: 1px solid #181818;
     overflow: hidden;
+    margin-bottom: 50px;
 }
 .popup-buttons {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    max-width: 400px;
+    width: 100%;
+    padding: 40px 0 0 130px;
 }
 .popup-button {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    padding: 15px 20px;
-    margin-right: 18px;
-    margin-bottom: 20px;
-    border: 1px solid #181818;
+    padding: 0px 10px 10px 0px;
+    font-size: 34px;
+    line-height: 34px;
+    text-align: left;
 }
 .popup-button span {
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
+    background: #181818;
+    color: #fff;
 }
 .popup-button span:last-child {
-    position: absolute;
-    left: 20px;
-    opacity: 0;
+    display: none;
 }
 .popup-button:hover span:first-child {
-    opacity: 0;
+    display: none;
 }
 .popup-button:hover span:last-child {
-    opacity: 1;
+    display: inline;
 }
 
 .popup {
@@ -535,7 +538,7 @@ p + ul {
 }
 .introtext, .sis-lead, .mess-lead {
     font-size: 34px;
-    line-height: 44px;
+    line-height: 50px;
 }
 .pull-quote {
     font-size: 40px;

@@ -95,12 +95,14 @@ function video_background() {
 		videos = document.querySelectorAll('.home video');
 
 	for(var v in videos){
-		if (window_aspect > video_aspect) {
-			videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
-			videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
-		} else {
-			videos[v].style.width = 'auto'
-			videos[v].style.height = 100 + '%'
+		if(videos[v].style != undefined){
+			if (window_aspect > video_aspect) {
+				videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
+				videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
+			} else {
+				videos[v].style.width = 'auto'
+				videos[v].style.height = 100 + '%'
+			}
 		}
 	}
 }
