@@ -171,3 +171,29 @@ function easeInOut(currentTime, start, change, duration) {
     currentTime -= 1;
     return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 }
+
+/* video background */
+var timeoutId, video_aspect = 1440 / 800;
+
+function video_background() {
+	var window_aspect = window.innerWidth / window.innerHeight,
+		videos = document.querySelectorAll('.home video');
+
+	for(var v in videos){
+		if(videos[v].style != undefined){
+			if (window_aspect > video_aspect) {
+				videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
+				videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
+			} else {
+				videos[v].style.width = 'auto'
+				videos[v].style.height = 100 + '%'
+			}
+		}
+	}
+}
+
+window.addEventListener('resize', function() {
+	video_background()
+});
+
+video_background()
