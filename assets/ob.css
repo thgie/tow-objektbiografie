@@ -32,7 +32,7 @@ h2.objectbiography {
 .home h2.objectbiography {
     position: fixed;
 }
-h2.objectbiography > span {
+h2.objectbiography > a {
     background: black;
     color: white;
     box-shadow: 5px 0 0 black, -5px 0 0 black;
