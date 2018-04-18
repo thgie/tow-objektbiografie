@@ -1,7 +1,9 @@
 /* home */
 $(function() {
 	$('#fullpage').fullpage({
-		scrollOverflow: true
+		scrollOverflow: true,
+		navigation: true,
+		navigationPosition: 'right'
 	});
 });
 

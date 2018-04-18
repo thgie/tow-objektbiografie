@@ -132,6 +132,19 @@ img.phonepiece ~ h3 {
 .fp-tableCell {
     vertical-align: top;
 }
+#fp-nav ul li:before, .fp-slidesNav ul li:before {
+    content: none;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background: transparent;
+    border: 1px solid #333;
+    height: 12px;
+    width: 12px;
+    margin: -6px 0 0 -6px;
+}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
+    background: #fff;
+}
 
 /* header */
 .header {
