@@ -110,6 +110,20 @@ h2.objectbiography > span {
 .section.with-scroll {
     overflow-y: scroll;
 }
+.section.with-image-left {
+    overflow: visible;
+}
+.section.with-image-left > img {
+    position: absolute;
+    transform: rotate(-5deg) translateX(-50%);
+    top: -5%;
+    z-index: 100000;
+    height: 110%;
+}
+.section.with-image-left > p,
+.section.with-image-left > h3 {
+    margin-left: 35vh;
+}
 .section h3, .section h4, .section p {
     max-width: 800px;
 }
