@@ -1,11 +1,46 @@
 /* home */
-$(function() {
-	$('#fullpage').fullpage({
-		scrollOverflow: true,
-		navigation: true,
-		navigationPosition: 'right'
+if(window.jQuery){
+	$(function() {
+		$('#fullpage').fullpage({
+			scrollOverflow: true,
+			navigation: true,
+			navigationPosition: 'right'
+		});
 	});
+}
+
+/* hash */
+if (location.hash) {
+    setTimeout(function(){
+        jump()
+    }, 250)
+}
+
+window.addEventListener('hashchange', function() {
+    jump()
 });
+
+function jump(){
+    var hash = location.hash.slice(1),
+        target = '[name="'+hash+'"]';
+
+    if(document.querySelector(target) === null) {
+        return
+    }
+
+    var top = document.querySelector(target).getBoundingClientRect().top;
+
+    setTimeout(function(){
+        scroll(document.querySelector('html'), top, 500)
+
+		var popups = document.querySelectorAll('.popup')
+
+		for(var p in popups){
+			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
+		}
+		document.querySelector(target).classList.add('open')
+    }, 100);
+}
 
 /* event listeners */
 document.body.addEventListener('mouseover', function(e) {
@@ -19,15 +54,15 @@ document.body.addEventListener('mouseout', function(e) {
 	}
 });
 document.body.addEventListener('click', function(e){
-	if(e.target.classList.contains('sis-toggle')) {
-		if(e.target.parentNode.parentNode.classList.contains('toggled')){
-			e.target.parentNode.parentNode.classList.remove('toggled')
-			document.body.style.overflow = 'auto'
-		} else {
-			e.target.parentNode.parentNode.classList.add('toggled')
-			document.body.style.overflow = 'hidden'
-		}
-	}
+	// if(e.target.classList.contains('sis-toggle')) {
+	// 	if(e.target.parentNode.parentNode.classList.contains('toggled')){
+	// 		e.target.parentNode.parentNode.classList.remove('toggled')
+	// 		document.body.style.overflow = 'auto'
+	// 	} else {
+	// 		e.target.parentNode.parentNode.classList.add('toggled')
+	// 		document.body.style.overflow = 'hidden'
+	// 	}
+	// }
 	if(e.target.classList.contains('popup-button') || e.target.parentNode.classList.contains('popup-button')) {
 
 		var target, popups = document.querySelectorAll('.popup')
@@ -41,7 +76,7 @@ document.body.addEventListener('click', function(e){
 		} else {
 			target = e.target.dataset.target
 		}
-		document.getElementById(target).classList.add('open')
+		document.querySelector('[name='+target+']').classList.add('open')
 	}
 	if(e.target.classList.contains('close-button')) {
 		e.target.parentNode.classList.remove('open')
@@ -108,39 +143,31 @@ setTimeout(function(){
 	}
 }, 5000)
 
-/* video background */
-var timeoutId, video_aspect = 1440 / 800;
+/* scroll */
+function scroll(element, to, duration) {
+    var start = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+        change = to,
+        increment = 20;
 
-function video_background() {
-	var window_aspect = window.innerWidth / window.innerHeight,
-		videos = document.querySelectorAll('.home video');
+    var animateScroll = function(elapsedTime) {
+        elapsedTime += increment;
+        var position = easeInOut(elapsedTime, start, change, duration);
+        element.scrollTop = position;
+        if (elapsedTime < duration) {
+            setTimeout(function() {
+                animateScroll(elapsedTime);
+            }, increment);
+        }
+    };
 
-	for(var v in videos){
-		if(videos[v].style != undefined){
-			if (window_aspect > video_aspect) {
-				videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
-				videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
-			} else {
-				videos[v].style.width = 'auto'
-				videos[v].style.height = 100 + '%'
-			}
-		}
-	}
+    animateScroll(0);
 }
 
-window.addEventListener('resize', function() {
-	video_background()
-});
-
-video_background()
-
-/* coloring prototype */
-/*var units = document.querySelectorAll('.sis-unit'), unit_width = 0;
-for(var u in units){
-	if(units[u].style != undefined){ unit_width += units[u].offsetWidth }
+function easeInOut(currentTime, start, change, duration) {
+    currentTime /= duration / 2;
+    if (currentTime < 1) {
+        return change / 2 * currentTime * currentTime + start;
+    }
+    currentTime -= 1;
+    return -change / 2 * (currentTime * (currentTime - 2) - 1) + start;
 }
-document.querySelector('.sis-body').style.width = unit_width + 'px'
-
-setTimeout(function(){
-	document.querySelector('.sis-body-wrapper').scrollLeft = 0
-}, 1500)*/
