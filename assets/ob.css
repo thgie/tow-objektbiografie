@@ -314,9 +314,9 @@ ol {
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -50%;
+    right: -70%;
     height: 100%;
-    width: 50%;
+    width: 70%;
     background: white;
     border-left: 1px solid #181818;
 
@@ -333,6 +333,7 @@ ol {
 .popup.open {
     opacity: 1;
     right: 0;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
 }
 .popup > div {
     padding: 40px 20px;
@@ -393,6 +394,7 @@ ol {
 
 /* popup gallery */
 .gallery-wrapper {
+    position: relative;
     overflow-x: auto;
     overflow-y: hidden;
 }
@@ -404,6 +406,29 @@ ol {
     float: left;
     height: 500px;
     width: auto;
+}
+.gallery-caption {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    bottom: 30%;
+    opacity: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 1);
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+
+    pointer-events: none;
+}
+.gallery-caption.show {
+    opacity: 1;
+}
+.gallery-caption p {
+    color: white;
+    transform: rotate(-5deg);
+    font-style: italic;
+    font-size: 24px;
 }
 
 
