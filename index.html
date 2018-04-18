@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="assets/normalize.css">
     <link rel="stylesheet" href="assets/fonts/relative-book/stylesheet.css">
+    <link rel="stylesheet" href="assets/fullpage/dist/jquery.fullpage.min.css">
     <link rel="stylesheet" href="assets/ob.css">
 
     <!-- made with love -->
@@ -16,7 +17,7 @@
 </head>
 <body class="home">
 
-<div class="wrapper">
+<div class="wrapper" id="fullpage">
 
     <h2 class="objectbiography"><span>objektbiografie</span></h2>
 
@@ -94,7 +95,7 @@
     </div>
     <div class="section with-image-left">
 
-        <img src="assets/img/home/phonepiece.png" alt="Phonepiece">
+        <img src="assets/img/home/phonepiece.png" alt="Phonepiece" class="phonepiece">
 
         <h3>Times of Waste verfolgt Transformationsprozesse des Smartphones und seiner Bestandteile.</h3>
         <p>Seine Objektbiografie kartografiert verschiedene Transportwege und Recyclingrouten. Sie erzählt von ökonomischen Umwandlungen und neuartigen Beziehungen.</p>
@@ -106,33 +107,33 @@
 
     </div>
     <div class="section">
-        <video autoplay loop class="video-background" muted plays-inline>
+        <video data-autoplay autoplay loop class="video-background" muted plays-inline>
             <source src="https://player.vimeo.com/external/264273389.hd.mp4?s=2268eff7619c924031c99a4b07a0afe403b67a62&profile_id=174" type="video/mp4">
         </video>
-        <div class="section-header">Mining</div>
+        <h4 class="section-title">Mining</h4>
         <h3 class="headline"><span>Minenstandorte werden bevorzugt in Ländern mit niedrigen Umwelt- und Sozialstandards errichtet. Minenstandorte werden bevorzugt in Ländern mit niedrigen Umwelt- und Sozialstandards errichtet. Ein eindrückliches Beispiel für diese Entwicklung ist die Förderung und Verhüttung von Seltenen Erden wie Neodym, das in Lautsprechern, Mikrofonen oder im Vibrationsalarm von Smartphones verarbeitet ist.</span></h3>
     </div>
     <div class="section" style="background-image: url(assets/img/home/teaser-production.jpg)">
-        <div class="section-header">Produktion</div>
+        <h4 class="section-title">Produktion</h4>
         <h3 class="headline"><span>In einem Handy sind ca. 0.4 g der Seltenen Erde Neodym im Lautsprecher, Vibrator, Mikrophon und in der Leiterplatte verbaut.</span></h3>
     </div>
     <div class="section" style="background-image: url(assets/img/home/teaser-reuse.jpg)">
-        <div class="section-header">Reuse</div>
+        <h4 class="section-title">Reuse</h4>
         <h3 class="headline"><span>Der internationale Gebrauchthandymarkt ist ein aufstrebender Markt, in Ländern des „globalen“ Nordens wie Südens. Denn Smartphones sind meist verleimte Minicomputer, deren Reparierbarkeit und Recyclierbarkeit schwierig ist.</span></h3>
     </div>
     <div class="section" style="background-image: url(assets/img/home/teaser-ewaste.jpg)">
-        <div class="section-header">E-Waste Recycling</div>
+        <h4 class="section-title">E-Waste Recycling</h4>
         <h3 class="headline"><span>Pro Person fallen in der Schweiz jährlich ca. 22 kg elektronischer Abfall an: Das waren 2016 rund 184’000 Tonnen, wodurch Schweizer_innen weltweit auf dem achten Platz rangieren (2014 auf Platz 2).</span></h3>
     </div>
     <div class="section">
-        <video autoplay loop class="video-background" muted plays-inline>
+        <video data-autoplay autoplay loop class="video-background" muted plays-inline>
             <source src="https://player.vimeo.com/external/264279652.hd.mp4?s=537ec9a2e9e759a394a3b8e462e899fcf4063e55&profile_id=174" type="video/mp4">
         </video>
-        <div class="section-header">Schlacke</div>
+        <h4 class="section-title">Schlacke</h4>
         <h3 class="headline"><span>Die bei der Kehrichtverbrennung anfallenden Schlacken-Überreste werden in Deponien aufgeschichtet. Schlacken sind Business: Da sie etwa die gleiche Kupferkonzentration wie Kupfererz aus einer Mine in der Demokratischen Republik Kongo aufweisen, werden sie als «Urban Mining-Eldorado» betrachtet.</span></h3>
     </div>
-    <div class="footer">
-        <ul>
+    <div class="footer section">
+        <ul class="footer-nav">
             <li>
                 <a href="#">Objektbiografie</a>
                 <ul>
@@ -197,12 +198,15 @@
             </li>
         </ul>
     </div>
-    <div class="impressum">
+    <div class="impressum section">
         <p class="caption">&copy; 2018 Times of Waste</p>
     </div>
 
 </div>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" defer></script>
+<script src="assets/fullpage/vendors/scrolloverflow.min.js" defer></script>
+<script src="assets/fullpage/dist/jquery.fullpage.min.js" defer></script>
 <script src="assets/ob.js" defer></script>
 
 </body>

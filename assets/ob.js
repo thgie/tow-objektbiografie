@@ -1,3 +1,10 @@
+/* home */
+$(function() {
+	$('#fullpage').fullpage({
+		scrollOverflow: true
+	});
+});
+
 /* event listeners */
 document.body.addEventListener('mouseover', function(e) {
 	if(e.target.classList.contains('fondle')) {
