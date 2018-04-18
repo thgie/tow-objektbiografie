@@ -444,6 +444,46 @@ ol {
 }
 
 
+/* audio */
+.audioplayer {
+    position: relative;
+    height: 140px;
+    width: 100%;
+    border: 1px solid #181818;
+    cursor: pointer;
+}
+.audioplayer .playbutton {
+    position: absolute;
+    left: 40px;
+    top: 35px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 30px 40px;
+    border-color: transparent transparent transparent #181818;
+}
+.audioplayer .playbutton.hide {
+    display: none;
+}
+.audioplayer .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #181818;
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+}
+.audioplayer .playtime {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
 /* footer */
 .footer {
     padding: 40px;
