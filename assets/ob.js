@@ -107,6 +107,9 @@ document.body.addEventListener('click', function(e){
 			target = e.target.dataset.target
 		}
 		document.querySelector('[name='+target+']').classList.add('open')
+
+		var top = document.querySelector('[name='+target+']').getBoundingClientRect().top - (window.innerHeight / 100 * 5);
+		scroll(document.querySelector('html'), top, 500)
 	}
 	if(e.target.classList.contains('close-button')) {
 		e.target.parentNode.classList.remove('open')
