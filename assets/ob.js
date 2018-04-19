@@ -21,7 +21,6 @@ for(var a in audios){
 			var minutes = Math.floor(time / 60);
 
 			document.querySelector('[name="'+this.getAttribute('name')+'-player"] .playtime').innerHTML = ('0' + minutes).substr(-2) + ':' + ('0' + seconds).substr(-2);
-
 			document.querySelector('[name="'+this.getAttribute('name')+'-player"] .progress').style.width = 100 / this.duration * this.currentTime + '%'
 		})
 	}
@@ -41,9 +40,6 @@ for(var a in audioplayers){
 		})
 	}
 }
-
-
-
 
 /* hash */
 if (location.hash) {
@@ -70,7 +66,6 @@ function jump(){
         scroll(document.querySelector('html'), top, 500)
 
 		var popups = document.querySelectorAll('.popup')
-
 		for(var p in popups){
 			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
 		}
@@ -79,6 +74,14 @@ function jump(){
 }
 
 /* event listeners */
+document.body.addEventListener('keyup', function(e){
+	if(e.keyCode === 13){
+		var popups = document.querySelectorAll('.popup')
+		for(var p in popups){
+			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
+		}
+	}
+})
 document.body.addEventListener('mouseover', function(e) {
 	if(e.target.classList.contains('fondle')) {
 		document.querySelector('#'+e.target.dataset.link).classList.add('not-so-shy-anymore')
@@ -90,15 +93,6 @@ document.body.addEventListener('mouseout', function(e) {
 	}
 });
 document.body.addEventListener('click', function(e){
-	// if(e.target.classList.contains('sis-toggle')) {
-	// 	if(e.target.parentNode.parentNode.classList.contains('toggled')){
-	// 		e.target.parentNode.parentNode.classList.remove('toggled')
-	// 		document.body.style.overflow = 'auto'
-	// 	} else {
-	// 		e.target.parentNode.parentNode.classList.add('toggled')
-	// 		document.body.style.overflow = 'hidden'
-	// 	}
-	// }
 	if(e.target.classList.contains('popup-button') || e.target.parentNode.classList.contains('popup-button')) {
 
 		var target, popups = document.querySelectorAll('.popup')
@@ -124,11 +118,6 @@ var scrolls = document.querySelectorAll('[data-scroll]')
 for(var s in scrolls){
 	if(scrolls[s].style != undefined){ scrolls[s].classList.add('no') }
 }
-/*window.addEventListener('mouseover', function(ev){
-	if(ev.target.classList.contains('with-scroll')){
-		ev.target.focus()
-	}
-})*/
 window.addEventListener('scroll', function(){
 	var st = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
 		wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
