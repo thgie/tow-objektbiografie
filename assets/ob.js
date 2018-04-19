@@ -75,7 +75,7 @@ function jump(){
 
 /* event listeners */
 document.body.addEventListener('keyup', function(e){
-	if(e.keyCode === 13){
+	if(e.keyCode === 27){
 		var popups = document.querySelectorAll('.popup')
 		for(var p in popups){
 			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
