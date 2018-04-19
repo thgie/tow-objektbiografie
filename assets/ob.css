@@ -476,6 +476,7 @@ ol {
     width: 100%;
     border: 1px solid #181818;
     cursor: pointer;
+    max-width: 600px;
 }
 .audioplayer .playbutton {
     position: absolute;
