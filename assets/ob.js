@@ -178,7 +178,7 @@ setTimeout(function(){
 			galleries[g].querySelector('.gallery').style.width = _w + 'px'
 		}
 	}
-}, 1000)
+}, 2500)
 
 /* scroll */
 function scroll(element, to, duration) {
