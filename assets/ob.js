@@ -172,7 +172,7 @@ setTimeout(function(){
 			for(var i in imgs){
 				if(imgs[i].style != undefined){
 					_w += imgs[i].offsetWidth
-					imgs[i].style.top = (-30 + Math.floor(Math.random() * <6></6>0)) + 'px'
+					imgs[i].style.top = (-30 + Math.floor(Math.random() * 60)) + 'px'
 				}
 			}
 			galleries[g].querySelector('.gallery').style.width = _w + 'px'
