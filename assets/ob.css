@@ -171,8 +171,8 @@ img.phonepiece ~ h3 {
 .header p span, h4, .home h3 span {
     background: black;
     color: white;
-    box-shadow: 5px 0 0 black, -5px 0 0 black;
-    padding: 3px 0;
+    box-shadow: 8px 0px 0 black, -2px 0 0 black;
+    padding: 0 0 4px;
 }
 .home h3.headline {
     position: absolute;
@@ -278,10 +278,9 @@ ol {
 /* popup */
 .popup-wrapper {
     position: relative;
-    min-height: 850px;
-    height: 90%;
-    border: 1px solid #181818;
+    height: 100%;
     overflow: hidden;
+    min-height: 850px;
     margin-bottom: 50px;
 }
 .popup-buttons {
@@ -318,7 +317,9 @@ ol {
     height: 100%;
     width: 70%;
     background: white;
+    border-top: 1px solid #181818;
     border-left: 1px solid #181818;
+    border-bottom: 1px solid #181818;
 
     padding-top: 20px;
     overflow-y: auto;
@@ -328,12 +329,13 @@ ol {
     transition: .5s;
 }
 .popup.intro {
+    right: -70%;
+    width: 50%;
     background: rgba(255, 255, 255, 0.9);
 }
 .popup.open {
     opacity: 1;
     right: 0;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
 }
 .popup > div {
     padding: 40px 20px;
@@ -353,6 +355,9 @@ ol {
     transform: none;
     margin-bottom: 20px;
 }
+.popup h4 {
+    max-width: 650px;
+}
 .popup a {
     text-decoration: underline;
 }
@@ -369,6 +374,9 @@ ol {
 }
 .popup img {
     width: 100%;
+}
+.article .popup p {
+    max-width: 650px;
 }
 .popup p:last-child {
     margin-bottom: 0;
@@ -590,7 +598,8 @@ h4 {
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 20px;
-    line-height: 27px;
+    line-height: 18px;
+    padding-bottom: 5px;
     font-weight: 300;
 }
 .home h4 {
@@ -631,8 +640,10 @@ p + ul {
 
 .vimeo {
     height: 0;
-    padding-top: 25px;
-    padding-bottom: 67.5%;
+    padding-top: 25px !important;
+    padding-bottom: 67.5% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-bottom: 10px;
     position: relative;
     overflow: hidden;

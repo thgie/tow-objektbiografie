@@ -108,7 +108,7 @@ document.body.addEventListener('click', function(e){
 		}
 		document.querySelector('[name='+target+']').classList.add('open')
 
-		var top = document.querySelector('[name='+target+']').getBoundingClientRect().top - (window.innerHeight / 100 * 5);
+		var top = document.querySelector('[name='+target+']').getBoundingClientRect().top;
 		scroll(document.querySelector('html'), top, 500)
 	}
 	if(e.target.classList.contains('close-button')) {
@@ -172,8 +172,7 @@ setTimeout(function(){
 			for(var i in imgs){
 				if(imgs[i].style != undefined){
 					_w += imgs[i].offsetWidth
-					imgs[i].style.left = (-15 + Math.floor(Math.random() * 30)) + 'px'
-					imgs[i].style.top = (-15 + Math.floor(Math.random() * 30)) + 'px'
+					imgs[i].style.top = (-30 + Math.floor(Math.random() * <6></6>0)) + 'px'
 				}
 			}
 			galleries[g].querySelector('.gallery').style.width = _w + 'px'
