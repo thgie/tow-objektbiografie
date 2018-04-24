@@ -40,6 +40,40 @@ for(var a in audioplayers){
 		})
 	}
 }
+/* photoloop */
+var loops = document.querySelectorAll('.photoloop')
+for(var p in loops){
+	if(loops[p].style){
+		create_loop(loops[p])
+	}
+}
+function create_loop(loop){
+	var timer;
+
+	loop.dataset.playing = 'false'
+	loop.dataset.total = loop.querySelectorAll('img').length
+	loop.dataset.current = 0
+
+	loop.addEventListener('click', function(){
+		if(loop.dataset.playing == 'false'){
+			loop.dataset.playing = 'true'
+			timer = setInterval(function(){
+				loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
+				if(loop.dataset.current < loop.dataset.total){
+					loop.dataset.current = parseInt(loop.dataset.current) + 1
+				} else {
+					loop.dataset.current = 0
+				}
+				loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
+			}, 3000)
+			loop.querySelector('.playbutton').classList.add('hide')
+		} else {
+			loop.dataset.playing = 'false'
+			clearInterval(timer)
+			loop.querySelector('.playbutton').classList.remove('hide')
+		}
+	})
+}
 
 /* hash */
 if (location.hash) {

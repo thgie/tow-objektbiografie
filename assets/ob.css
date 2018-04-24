@@ -15,6 +15,7 @@ body {
     max-width: 1440px;
     /* margin: 0 auto; */
     padding-left: 100px;
+    padding-bottom: 50px;
 }
 .home .wrapper {
     max-width: none;
@@ -193,7 +194,6 @@ img.phonepiece ~ h3 {
     transform: rotate(-5deg);
 }
 .article {
-    height: 100%;
     padding-bottom: 50px;
 }
 .article-main {
@@ -338,7 +338,7 @@ ol {
     right: 0;
 }
 .popup > div {
-    padding: 40px 20px;
+    padding: 0 20px;
 }
 .popup > div.gallery-wrapper {
     padding: 40px 0;
@@ -377,9 +377,6 @@ ol {
 }
 .article .popup p {
     max-width: 650px;
-}
-.popup p:last-child {
-    margin-bottom: 0;
 }
 .close-button {
     position: absolute;
@@ -439,6 +436,39 @@ ol {
     font-size: 24px;
 }
 
+/* photoloop */
+.photoloop-wrapper {
+    max-width: 800px;
+}
+.popup > div.photoloop-wrapper {
+    position: relative;
+    max-width: none;
+    padding: 0;
+}
+.photoloop {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+.photoloop > img {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    top: 0;
+    left: 0;
+
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+.photoloop > img:first-child {
+    position: static;
+}
+.photoloop > img.show {
+    opacity: 1;
+}
+
 
 /* mess */
 .mess {
@@ -486,17 +516,27 @@ ol {
     cursor: pointer;
     max-width: 600px;
 }
-.audioplayer .playbutton {
+.playbutton {
     position: absolute;
-    left: 40px;
-    top: 35px;
+    left: 50%;
+    top: 50%;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 30px 0 30px 40px;
     border-color: transparent transparent transparent #181818;
+
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    margin-left: -20px;
 }
-.audioplayer .playbutton.hide {
+.photoloop-wrapper .playbutton {
+    pointer-events: none;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+}
+.playbutton.hide {
     display: none;
 }
 .audioplayer .progress {
@@ -515,6 +555,11 @@ ol {
     position: absolute;
     bottom: 20px;
     right: 20px;
+}
+
+
+.photoloop-wrapper, .gallery-wrapper, .audioplayer {
+    margin-bottom: 10px;
 }
 
 
@@ -615,9 +660,6 @@ p, ul, ol {
 }
 .impressum p {
     margin-bottom: 0;
-}
-p + ul {
-    margin-top: -25px;
 }
 .introtext, .sis-lead, .mess-lead {
     font-size: 34px;
