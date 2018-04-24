@@ -171,7 +171,7 @@ setTimeout(function(){
 			var imgs = galleries[g].querySelectorAll('img'), _w = 0;
 			for(var i in imgs){
 				if(imgs[i].style != undefined){
-					_w += imgs[i].offsetWidth
+					_w += Math.ceil(imgs[i].offsetWidth) + 1
 					imgs[i].style.top = (-30 + Math.floor(Math.random() * 60)) + 'px'
 				}
 			}
