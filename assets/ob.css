@@ -22,7 +22,7 @@ body {
     padding-left: 0;
 }
 h2.objectbiography {
-    position: absolute;
+    position: fixed;
     top: 30px;
     left: 20px;
     font-size: 34px;
@@ -44,7 +44,80 @@ h2.objectbiography > a {
     top: 150px;
     z-index: 1000;
 }
-.nav ul {
+.nav > a {
+    display: inline-block;
+    padding-bottom: 10px;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    transition-delay: 2s;
+}
+.nav > a:hover {
+    transform: rotate(-10deg);
+    transition-delay: 0s;
+}
+.nav > ul {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 40px;
+    background: white;
+
+
+    -webkit-transform:  translateY(-100%);
+    -ms-transform:  translateY(-100%);
+    transform:  translateY(-100%);
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+}
+.nav > ul:hover,
+.nav > a:hover + ul {
+    -webkit-transform:  translateY(0);
+    -ms-transform:  translateY(0);
+    transform:  translateY(0);
+
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+.nav > a > img {
+    width: 40px;
+    height: auto;
+}
+
+.nav a:hover,
+.footer a:hover {
+    text-decoration: underline;
+}
+.nav li:before,
+.footer li:before {
+    content: none;
+}
+.nav ul > li,
+.footer ul > li {
+    margin-left: 0;
+}
+.nav ul > li,
+.footer ul > li {
+    float: left;
+    display: inline-block;
+    width: 14%;
+    line-height: 24px;
+}
+.nav ul > li > a,
+.footer ul > li > a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.nav ul > li li,
+.footer ul > li li {
+    float: none;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+}
+/* .nav ul {
     display: none;
     background: #ffffff;
 }
@@ -65,22 +138,6 @@ h2.objectbiography > a {
 .nav a:hover + ul {
     display: block;
 }
-.nav > a {
-    display: inline-block;
-    padding-bottom: 10px;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    transition-delay: 2s;
-}
-.nav > a:hover {
-    transform: rotate(-10deg);
-    transition-delay: 0s;
-}
-.nav > a > img {
-    width: 40px;
-    height: auto;
-}
 .nav li {
     position: static;
     margin-left: 0;
@@ -95,7 +152,8 @@ h2.objectbiography > a {
 .nav ul a:hover {
     background: #181818;
     color: #ffffff;
-}
+} */
+
 
 /* home */
 .section {
@@ -571,29 +629,6 @@ ol {
     display: block;
     content: '';
     clear: both;
-}
-.footer a:hover {
-    text-decoration: underline;
-}
-.footer li:before {
-    content: none;
-}
-.footer ul > li {
-    margin-left: 0;
-}
-ul.footer-nav > li {
-    float: left;
-    display: inline-block;
-    width: 14%;
-    line-height: 24px;
-}
-ul.footer-nav > li > a {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-ul.footer-nav > li li {
-    font-size: 16px;
-    line-height: 30px;
 }
 .impressum {
     clear: both;
