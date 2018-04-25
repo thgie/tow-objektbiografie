@@ -1,3 +1,9 @@
+/* default */
+window.addEventListener('load', function(){
+	document.querySelector('.header').classList.add('hide')
+})
+
+
 /* home */
 if(window.jQuery){
 	$(function() {
