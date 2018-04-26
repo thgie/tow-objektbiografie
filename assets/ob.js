@@ -1,6 +1,8 @@
 /* default */
 window.addEventListener('load', function(){
-	document.querySelector('.header').classList.add('hide')
+	setTimeout(function(){
+		document.querySelector('.header').classList.add('hide')
+	}, 2000)
 })
 
 
@@ -65,7 +67,7 @@ function create_loop(loop){
 			loop.dataset.playing = 'true'
 			timer = setInterval(function(){
 				loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
-				if(loop.dataset.current < loop.dataset.total){
+				if(loop.dataset.current < parseInt(loop.dataset.total) - 1){
 					loop.dataset.current = parseInt(loop.dataset.current) + 1
 				} else {
 					loop.dataset.current = 0
@@ -74,9 +76,17 @@ function create_loop(loop){
 			}, 3000)
 			loop.querySelector('.playbutton').classList.add('hide')
 		} else {
-			loop.dataset.playing = 'false'
-			clearInterval(timer)
-			loop.querySelector('.playbutton').classList.remove('hide')
+			// loop.dataset.playing = 'false'
+			// clearInterval(timer)
+			// loop.querySelector('.playbutton').classList.remove('hide')
+
+			loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
+			if(loop.dataset.current < parseInt(loop.dataset.total) - 1){
+				loop.dataset.current = parseInt(loop.dataset.current) + 1
+			} else {
+				loop.dataset.current = 0
+			}
+			loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
 		}
 	})
 }
@@ -93,6 +103,9 @@ window.addEventListener('hashchange', function() {
 });
 
 function jump(){
+
+	document.querySelector('.header').classList.add('hide')
+
     var hash = location.hash.slice(1),
         target = '[name="'+hash+'"]';
 

@@ -222,10 +222,6 @@ img.phonepiece ~ h3 {
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-
-    -webkit-transition-delay: 2s;
-    -o-transition-delay: 2s;
-    transition-delay: 2s;
 }
 .header.hide {
     opacity: 0;
@@ -467,7 +463,6 @@ ol {
     cursor: pointer;
 
     transform: rotate(0);
-    z-index: 1000;
 }
 .close-button:hover {
     background: #181818;
