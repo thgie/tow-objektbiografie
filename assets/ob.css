@@ -32,6 +32,8 @@ h2.objectbiography {
 }
 .home h2.objectbiography {
     position: fixed;
+    left: auto;
+    right: 30px;
 }
 h2.objectbiography > a {
     background: black;
@@ -43,6 +45,10 @@ h2.objectbiography > a {
     left: 30px;
     top: 150px;
     z-index: 1000;
+}
+.home .nav {
+    left: auto;
+    right: 30px;
 }
 .nav > a {
     display: inline-block;
@@ -182,10 +188,11 @@ img.phonepiece {
     height: 110%;
 }
 img.phonepiece ~ p,
+img.phonepiece ~ h2,
 img.phonepiece ~ h3 {
     margin-left: 35vh;
 }
-.section h3, .section h4, .section p {
+.section h2, .section h3, .section h4, .section p {
     max-width: 800px;
 }
 .fp-tableCell {
@@ -232,6 +239,7 @@ img.phonepiece ~ h3 {
 }
 .home h1 {
     width: 90%;
+    margin-top: 5%;
     margin-left: 5%;
 }
 .article-main h1 {
@@ -665,7 +673,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 300;
 }
 h1, .title, .mess-quote {
-    font-size: 160px;
+    font-size: 140px;
     line-height: 160px;
 }
 .home h1 {
