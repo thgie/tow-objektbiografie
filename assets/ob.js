@@ -1,21 +1,28 @@
 /* default */
 window.addEventListener('load', function(){
+
+	if(document.querySelector('.home h1')){
+		document.querySelector('.home h1').classList.add('show')
+	}
+
 	setTimeout(function(){
-		document.querySelector('.header').classList.add('hide')
+		if(document.querySelector('.header')){
+			document.querySelector('.header').classList.add('hide')
+		}
 	}, 2000)
 })
 
 
 /* home */
-if(window.jQuery){
-	$(function() {
-		$('#fullpage').fullpage({
-			scrollOverflow: true,
-			navigation: true,
-			navigationPosition: 'right'
-		});
-	});
-}
+// if(window.jQuery){
+// 	$(function() {
+// 		$('#fullpage').fullpage({
+// 			scrollOverflow: true,
+// 			navigation: true,
+// 			navigationPosition: 'right'
+// 		});
+// 	});
+// }
 
 /* audio */
 var audios = document.querySelectorAll('audio')
