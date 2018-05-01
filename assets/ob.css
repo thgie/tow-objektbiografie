@@ -20,6 +20,7 @@ body {
 .home .wrapper {
     max-width: none;
     padding-left: 0;
+    padding-bottom: 0;
 }
 h2.objectbiography {
     position: fixed;
@@ -167,14 +168,27 @@ h2.objectbiography > a {
 .section {
     position: relative;
     width: 100%;
-    min-height: 100%;
+    /* min-height: 100%; */
     padding: 80px;
 
     background-size: cover;
     background-position: center;
 }
+.section.video {
+    padding: 0;
+}
+.section.video,
+.section.full-height {
+    min-height: 100%;
+}
+.section.align-right {
+    text-align: right;
+}
+.section.offset-top {
+    margin-top: -133px;
+}
 .introduction {
-
+    position: relative;
 }
 .quotes h2:first-child {
     margin-left: 100px;
@@ -184,15 +198,21 @@ h2.objectbiography > a {
 }
 img.phonepiece {
     position: absolute;
-    transform: rotate(-5deg) translateX(-50%);
-    top: -5%;
-    z-index: 100000;
-    height: 110%;
+    transform: rotate(12deg);
+    top: 400px;
+    z-index: -1;
+    height: 700px;
+    right: 200px;
+
+    -webkit-transition: 20s;
+    -o-transition: 20s;
+    transition: 20s;
 }
-img.phonepiece ~ p,
-img.phonepiece ~ h2,
-img.phonepiece ~ h3 {
-    margin-left: 35vh;
+img.phonepiece.move {
+    transform: rotate(87deg);
+    top: 1300px;
+    height: 1700px;
+    right: 330px;
 }
 .section h2, .section h3, .section h4, .section p {
     max-width: 1100px;
@@ -228,9 +248,9 @@ img.phonepiece ~ h3 {
     margin-top: 5%;
     margin-left: 10%;
     opacity: 0;
-    -webkit-transition: 3s;
-    -o-transition: 3s;
-    transition: 3s;
+    -webkit-transition: opacity 3s;
+    -o-transition: opacity 3s;
+    transition: opacity 3s;
 }
 .home h1.show {
     opacity: 1;
@@ -636,6 +656,11 @@ ol {
 
 
 /* footer */
+.section.final-quote {
+    padding: 40px;
+    color: #fff;
+    background: #181818;
+}
 .footer {
     padding: 40px;
 }
@@ -643,6 +668,17 @@ ol {
     display: block;
     content: '';
     clear: both;
+}
+.section.final-quote p {
+    margin-bottom: 10px;
+}
+.footer p, .section.final-quote p {
+    font-size: 20px;
+    line-height: 27px;
+}
+.footer p.caption, .impressum p.caption, .section.final-quote p.caption {
+    font-size: 14px;
+    line-height: 22px;
 }
 .impressum {
     clear: both;
@@ -670,12 +706,12 @@ h1, .h1, .title, .mess-quote {
     line-height: 130px;
 }
 .home h1, .home .h1 {
-    font-style: italic;
     transform: rotate(-5deg);
 }
 .introduction h2 {
     font-size: 60px;
     line-height: 72px;
+    margin-bottom: 40px;
 }
 .home h2 p.caption {
     font-size: 28px;
@@ -722,10 +758,55 @@ p, ul, ol {
 }
 .home p {
     font-size: 36px;
-    line-height: 44px;
+    line-height: 48px;
     margin-bottom: 80px;
     max-width: 1200px;
 }
+.introduction p {
+    margin-bottom: 40px;
+}
+.section p.quote {
+    position: absolute;
+    transform: rotate(-3deg);
+    max-width: 800px;
+    left: 300px;
+    bottom: -160px;
+    font-size: 60px;
+    line-height: 66px;
+}
+.introduction h2 span,
+.introduction p span {
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 8px 0px 0 rgba(255, 255, 255, 0.75), -2px 0 0 rgba(255, 255, 255, 0.75);
+}
+.introduction.black-label p span {
+    color: #fff;
+    background: black;
+    box-shadow: 8px 0px 0 black, -2px 0 0 black;
+}
+.introduction.text-bottom-left p {
+    position: absolute;
+    left: 80px;
+    bottom: 100px;
+    max-width: 800px;
+    text-align: left;
+}
+.introduction.text-bottom-center p {
+    position: absolute;
+    left: 40%;
+    bottom: 100px;
+    max-width: 860px;
+    text-align: left;
+}
+.introduction.text-center-left p {
+    position: absolute;
+    left: 80px;
+    top: 40%;
+    max-width: 800px;
+    text-align: left;
+    transform: translateY(-50%);
+}
+
 .impressum p {
     margin-bottom: 0;
 }
@@ -759,15 +840,7 @@ p, ul, ol {
     overflow: hidden;
 }
 .home video {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
     height: 100%;
-    -webkit-transform: translateX(-50.5%);
-    -ms-transform: translateX(-50.5%);
-    transform: translateX(-50.5%);
-    pointer-events: none;
 }
 .vimeo embed, .vimeo iframe, .vimeo object, .vimeo video {
     top: 0;
@@ -789,6 +862,44 @@ button[type="button"] {
 
     border: 1px solid #181818;
     background: none;
+}
+
+/* objects */
+.object {
+    position: absolute;
+    z-index: 100;
+}
+.object-1 {
+    bottom: 100px;
+    left: 1040px;
+}
+.object-2 {
+    left: 400px;
+    bottom: -100px;
+}
+.object-3 {
+    left: 1100px;
+    bottom: -30px;
+}
+.object-4 {
+    left: 260px;
+    bottom: 150px;
+}
+.object img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.object-1 img.background {
+    top: -40px;
+}
+.object-2 img.background {
+    left: -100px;
+    top: 40px;
+}
+.object-4 img.background {
+    left: -50px;
+    top: 50px;
 }
 
 /* fondling */

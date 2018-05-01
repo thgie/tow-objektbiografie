@@ -197,8 +197,22 @@ window.addEventListener('scroll', function(){
 			} else {
 				if(scrolls[s].getBoundingClientRect().top < c) {
 					scrolls[s].classList.remove('no')
-				} else {
+				}/* else {
 					scrolls[s].classList.add('no')
+				}*/
+			}
+			if(scrolls[s].dataset.scroll == 'phonepiece'){
+				if(scrolls[s].getBoundingClientRect().top < c) {
+					scrolls[s].classList.add('move')
+				} else {
+					scrolls[s].classList.remove('move')
+				}
+			}
+			if(scrolls[s].dataset.scroll == 'video'){
+				if(scrolls[s].getBoundingClientRect().top < wh && scrolls[s].getBoundingClientRect().top > 0 - c) {
+					scrolls[s].play()
+				} else {
+					scrolls[s].pause()
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'intro'){
@@ -279,8 +293,8 @@ function video_background() {
 	for(var v in videos){
 		if(videos[v].style != undefined){
 			if (window_aspect > video_aspect) {
-				videos[v].style.width = (window_aspect / video_aspect) * 102 + '%';
-				videos[v].style.height = (window_aspect / video_aspect) * 102 + '%';
+				videos[v].style.width = (video_aspect / window_aspect) * 102 + '%';
+				videos[v].style.height = (video_aspect / window_aspect) * 102 + '%';
 			} else {
 				videos[v].style.width = 'auto'
 				videos[v].style.height = 100 + '%'
