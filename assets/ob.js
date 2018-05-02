@@ -292,13 +292,13 @@ function video_background() {
 
 	for(var v in videos){
 		if(videos[v].style != undefined){
-			if (window_aspect > video_aspect) {
+			// if (window_aspect > video_aspect) {
 				videos[v].style.width = (video_aspect / window_aspect) * 102 + '%';
 				videos[v].style.height = (video_aspect / window_aspect) * 102 + '%';
-			} else {
-				videos[v].style.width = 'auto'
-				videos[v].style.height = 100 + '%'
-			}
+			// } else {
+			// 	videos[v].style.width = 'auto'
+			// 	videos[v].style.height = 100 + '%'
+			// }
 		}
 	}
 }
