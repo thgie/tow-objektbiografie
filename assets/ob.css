@@ -840,6 +840,13 @@ p, ul, ol {
     position: relative;
     overflow: hidden;
 }
+.video {
+    height: 100%;
+}
+.video video {
+    min-width: auto;
+    min-height: 100%;
+}
 .video-background {
     position: absolute;
     top: 0;
@@ -854,13 +861,13 @@ p, ul, ol {
     min-width: 100%;
     min-height: 100%;
 }
-.vimeo embed, .vimeo iframe, .vimeo object, .vimeo video {
+/* .vimeo embed, .vimeo iframe, .vimeo object, .vimeo video {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: absolute;
-}
+} */
 
 a, a:hover, a:visited, a:active {
     color: #181818;

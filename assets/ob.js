@@ -297,10 +297,10 @@ function video_background() {
 	for(var v in videos){
 		if(videos[v].style != undefined){
 			if(videos[v].dataset.video == 'background'){
-				
+
 			} else {
-				videos[v].style.width = (video_aspect / window_aspect) * 102 + '%';
-				videos[v].style.height = (video_aspect / window_aspect) * 102 + '%';
+				// videos[v].style.width = (video_aspect / window_aspect) * 102 + '%';
+				// videos[v].style.height = (video_aspect / window_aspect) * 102 + '%';
 			}
 
 		}
