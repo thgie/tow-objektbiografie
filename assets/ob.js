@@ -111,7 +111,11 @@ window.addEventListener('hashchange', function() {
 
 function jump(){
 
-	document.querySelector('.header').classList.add('hide')
+	if(document.querySelector('.header')){
+		document.querySelector('.header').classList.add('hide')
+	}
+
+	console.log('jump')
 
     var hash = location.hash.slice(1),
         target = '[name="'+hash+'"]';
@@ -123,6 +127,7 @@ function jump(){
     var top = document.querySelector(target).getBoundingClientRect().top;
 
     setTimeout(function(){
+		console.log('scrolling')
         scroll(document.querySelector('html'), top, 500)
 
 		var popups = document.querySelectorAll('.popup')
@@ -208,6 +213,19 @@ function scrolling(){
 					scrolls[s].classList.add('move')
 				} else {
 					scrolls[s].classList.remove('move')
+				}
+			}
+			if(scrolls[s].dataset.scroll == 'hash'){
+				if(scrolls[s].getBoundingClientRect().top < c && scrolls[s].getBoundingClientRect().top > 0 - c) {
+					var toc_items = document.querySelectorAll('.toc li')
+
+					for(var i in toc_items){
+						if(toc_items[i].style != undefined){
+							toc_items[i].classList.remove('active')
+						}
+					}
+
+					document.querySelector('.toc li[data-target="'+scrolls[s].dataset.hash+'"]').classList.add('active')
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
