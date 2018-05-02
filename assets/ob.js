@@ -181,7 +181,9 @@ var scrolls = document.querySelectorAll('[data-scroll]')
 for(var s in scrolls){
 	if(scrolls[s].style != undefined){ scrolls[s].classList.add('no') }
 }
-window.addEventListener('scroll', function(){
+window.addEventListener('scroll', scrolling)
+
+function scrolling(){
 	var st = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
 		wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
 		c = wh / 2;
@@ -225,7 +227,9 @@ window.addEventListener('scroll', function(){
 			}
 		}
 	}
-})
+}
+
+scrolling()
 
 /* gallery */
 setTimeout(function(){
@@ -292,13 +296,13 @@ function video_background() {
 
 	for(var v in videos){
 		if(videos[v].style != undefined){
-			// if (window_aspect > video_aspect) {
+			if(videos[v].dataset.video == 'background'){
+				
+			} else {
 				videos[v].style.width = (video_aspect / window_aspect) * 102 + '%';
 				videos[v].style.height = (video_aspect / window_aspect) * 102 + '%';
-			// } else {
-			// 	videos[v].style.width = 'auto'
-			// 	videos[v].style.height = 100 + '%'
-			// }
+			}
+
 		}
 	}
 }
