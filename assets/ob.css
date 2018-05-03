@@ -849,6 +849,9 @@ p, ul, ol {
     position: relative;
     overflow: hidden;
 }
+.vimeo iframe {
+	width: 100%;
+}
 .video {
     height: 100%;
 }
