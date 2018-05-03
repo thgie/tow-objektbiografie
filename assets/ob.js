@@ -63,11 +63,13 @@ for(var p in loops){
 	}
 }
 function create_loop(loop){
-	var timer;
+	var timer, count = loop.nextElementSibling;
 
 	loop.dataset.playing = 'false'
 	loop.dataset.total = loop.querySelectorAll('img').length
 	loop.dataset.current = 0
+
+	count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
 
 	loop.addEventListener('click', function(){
 		if(loop.dataset.playing == 'false'){
@@ -79,6 +81,7 @@ function create_loop(loop){
 				} else {
 					loop.dataset.current = 0
 				}
+				count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
 				loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
 			}, 3000)
 			loop.querySelector('.playbutton').classList.add('hide')
@@ -94,6 +97,7 @@ function create_loop(loop){
 				loop.dataset.current = 0
 			}
 			loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
+			count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
 		}
 	})
 }
@@ -115,8 +119,6 @@ function jump(){
 		document.querySelector('.header').classList.add('hide')
 	}
 
-	console.log('jump')
-
     var hash = location.hash.slice(1),
         target = '[name="'+hash+'"]';
 
@@ -127,7 +129,6 @@ function jump(){
     var top = document.querySelector(target).getBoundingClientRect().top;
 
     setTimeout(function(){
-		console.log('scrolling')
         scroll(document.querySelector('html'), top, 500)
 
 		var popups = document.querySelectorAll('.popup')
@@ -275,6 +276,16 @@ setTimeout(function(){
 		}
 	}
 }, 2500)
+
+var skips = document.querySelectorAll('[data-skip]')
+for(var s in skips){
+	if(skips[s].style != undefined){
+		skips[s].addEventListener('click', function(){
+			console.log(this.previousElementSibling)
+			this.previousElementSibling.scrollLeft += this.previousElementSibling.offsetWidth * 0.5;
+		})
+	}
+}
 
 /* scroll */
 function scroll(element, to, duration) {

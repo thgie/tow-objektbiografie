@@ -525,6 +525,12 @@ ol {
     font-style: italic;
     font-size: 24px;
 }
+a[data-skip] {
+    width: 120px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+}
 
 /* photoloop */
 .photoloop-wrapper {
@@ -557,6 +563,15 @@ ol {
 }
 .photoloop > img.show {
     opacity: 1;
+}
+.loopcount {
+	text-align: right;
+    font-size: 40px;
+    transform: rotate(-5deg);
+    position: relative;
+    top: 40px;
+    right: 30px;
+	margin-bottom: 20px;
 }
 
 
