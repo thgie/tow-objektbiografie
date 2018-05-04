@@ -852,6 +852,20 @@ p, ul, ol {
 .vimeo iframe {
 	width: 100%;
 }
+.popup .vimeo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.popup .vimeo iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 .video {
     height: 100%;
 }
