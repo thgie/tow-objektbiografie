@@ -230,7 +230,7 @@ function scrolling(){
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
-				if(scrolls[s].getBoundingClientRect().top < wh && scrolls[s].getBoundingClientRect().top > 0 - c) {
+				if(scrolls[s].getBoundingClientRect().top < c && scrolls[s].getBoundingClientRect().top > 0 - c) {
 					scrolls[s].play()
 				} else {
 					scrolls[s].pause()
