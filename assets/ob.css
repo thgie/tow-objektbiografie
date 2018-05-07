@@ -133,6 +133,17 @@ h2.objectbiography > a {
     top: 220px;
     z-index: 750;
     text-align: right;
+
+	opacity: 0;
+
+	-webkit-transition: .25s;
+	-moz-transition: .25s;
+	-o-transition: .25s;
+	-ms-transition: .25s;
+	transition: .25s;
+}
+.toc.show {
+	opacity: 1;
 }
 .toc li:before {
     content: none;
