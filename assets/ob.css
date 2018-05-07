@@ -861,7 +861,7 @@ p, ul, ol {
 	padding-bottom: 56.25%;
 	height: 0;
 	overflow: hidden;
-	max-width: 100%;	
+	max-width: 100%;
 }
 .popup .vimeo iframe {
 	position: absolute;
@@ -903,7 +903,9 @@ a, a:hover, a:visited, a:active {
     color: #181818;
     text-decoration: none;
 }
-
+.article-main a {
+    text-decoration: underline;
+}
 button[type="button"] {
     -webkit-appearance: none;
     -moz-appearance: none;
