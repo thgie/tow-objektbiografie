@@ -227,9 +227,7 @@ function scrolling(){
 					}
 
 					document.querySelector('.toc li[data-target="'+scrolls[s].dataset.hash+'"]').classList.add('active')
-					if(scrolls[s].dataset.hash == 'mining'){
-						document.querySelector('.toc').classList.add('show')
-					}
+					document.querySelector('.toc').classList.add('show')
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
