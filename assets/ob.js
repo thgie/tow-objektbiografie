@@ -10,6 +10,16 @@ window.addEventListener('load', function(){
 			document.querySelector('.header').classList.add('hide')
 		}
 	}, 2000)
+
+	var ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+
+	if(ww < 768){
+		document.querySelector('.wrapper').classList.add('warning')
+		document.querySelector('.wrapper.warning').addEventListener('click', function(){
+			this.classList.remove('warning')
+		})
+	}
+
 })
 
 

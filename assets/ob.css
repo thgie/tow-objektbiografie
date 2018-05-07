@@ -987,7 +987,7 @@ a.fondle:hover:after {
 
 /* warning */
 @media (max-width: 768px){
-    .wrapper:before {
+    .wrapper.warning:before {
         content: 'Bitte geniessen Sie die Smartphone Objektbiografie an einem grösseren Bildschirm.';
         display: block;
         position: fixed;
@@ -998,10 +998,11 @@ a.fondle:hover:after {
         background: rgba(255, 0, 0, 0.5);
         color: white;
         text-align: center;
-        padding: 40% 70px;
+        padding: 20px;
         box-sizing: border-box;
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 400;
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        z-index: 1000000;
     }
 }
