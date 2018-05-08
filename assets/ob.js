@@ -237,12 +237,21 @@ function scrolling(){
 					}
 
 					document.querySelector('.toc li[data-target="'+scrolls[s].dataset.hash+'"]').classList.add('active')
-					document.querySelector('.toc').classList.add('show')
+					if(scrolls[s].dataset.hash != 'introduction'){
+						document.querySelector('.toc').classList.add('show')
+					}
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
 				if(scrolls[s].getBoundingClientRect().top < c && scrolls[s].getBoundingClientRect().top > 0 - c) {
-					scrolls[s].play()
+					var promise = scrolls[s].play();
+					if (promise !== undefined) {
+					  promise.then(_ => {
+
+					  }).catch(error => {
+
+					  });
+					}
 				} else {
 					scrolls[s].pause()
 				}

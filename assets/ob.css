@@ -30,13 +30,14 @@ h2.objectbiography {
     line-height: 44px;
     transform: rotate(-5deg);
     z-index: 1000;
-    text-align: right;
+    text-align: left;
     font-style: italic;
 }
 .home h2.objectbiography {
     position: fixed;
     left: auto;
     right: 30px;
+    text-align: right;
 }
 h2.objectbiography > a {
     background: black;
@@ -111,12 +112,30 @@ h2.objectbiography > a {
 .footer ul > li {
     float: left;
     display: inline-block;
-    width: 14%;
+    width: 20%;
     line-height: 24px;
 }
 .nav ul > li > a,
 .footer ul > li > a {
     display: inline-block;
+    margin-bottom: 10px;
+}
+.nav ul > li > ul + a,
+.footer ul > li > ul + a {
+    margin-top: 30px;
+}
+.nav h2, .footer h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+.nav > ul > li > a,
+.footer > ul > li > a {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+.nav > ul > li > a.about,
+.footer > ul > li > a.about {
     margin-bottom: 10px;
 }
 .nav ul > li li,
