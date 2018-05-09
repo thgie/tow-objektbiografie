@@ -896,6 +896,10 @@ p, ul, ol {
     min-width: auto;
     min-height: 100%;
 }
+.popup .video video {
+    max-width: 100%;
+    height: auto;
+}
 .video-background {
     position: absolute;
     top: 0;
