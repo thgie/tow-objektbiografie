@@ -482,14 +482,14 @@ ol {
 .popup a {
     text-decoration: underline;
 }
-.popup a.pdf {
+a.pdf {
     display: inline-block;
     padding: 10px;
     background-color: #181818;
     color: #ffffff;
     text-decoration: none;
 }
-.popup a.pdf:hover {
+a.pdf:hover {
     background-color: #ffffff;
     color: #181818;
 }
