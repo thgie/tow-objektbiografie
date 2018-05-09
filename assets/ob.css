@@ -482,17 +482,6 @@ ol {
 .popup a {
     text-decoration: underline;
 }
-a.pdf {
-    display: inline-block;
-    padding: 10px;
-    background-color: #181818;
-    color: #ffffff;
-    text-decoration: none;
-}
-a.pdf:hover {
-    background-color: #ffffff;
-    color: #181818;
-}
 .popup img {
     width: 100%;
 }
@@ -928,6 +917,18 @@ a, a:hover, a:visited, a:active {
 }
 .article-main a {
     text-decoration: underline;
+}
+
+a.pdf, .article-main a.pdf {
+    display: inline-block;
+    padding: 10px;
+    background-color: #181818;
+    color: #ffffff;
+    text-decoration: none;
+}
+a.pdf:hover {
+    background-color: #ffffff;
+    color: #181818;
 }
 button[type="button"] {
     -webkit-appearance: none;
