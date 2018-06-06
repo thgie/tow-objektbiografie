@@ -74,20 +74,19 @@ h2.objectbiography > a {
     padding: 40px;
     background: white;
 
-
     -webkit-transform:  translateY(-100%);
     -ms-transform:  translateY(-100%);
     transform:  translateY(-100%);
-
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
 }
 .nav > ul:hover,
 .nav > a:hover + ul {
     -webkit-transform:  translateY(0);
     -ms-transform:  translateY(0);
     transform:  translateY(0);
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
 
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
@@ -1011,7 +1010,7 @@ a.fondle:hover:after {
 
 /* warning */
 @media (max-width: 768px){
-    .wrapper.warning:before {
+    /*.wrapper.warning:before {
         content: 'Bitte geniessen Sie die Smartphone Objektbiografie an einem grösseren Bildschirm.';
         display: block;
         position: fixed;
@@ -1028,5 +1027,46 @@ a.fondle:hover:after {
         font-weight: 400;
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         z-index: 1000000;
+    }*/
+}
+
+@media (max-width: 480px){
+    h1, .h1, .title, .mess-quote {
+        font-size: 70px;
+    }
+    .article-main h1 {
+        margin-top: 30px;
+    }
+    h2.objectbiography {
+        position: static;
+        margin-top: 10px;
+    }
+    .nav {
+        left: auto;
+        right: 20px;
+        top: 20px;
+    }
+    .nav ul > li, .footer ul > li {
+        width: 50%;
+    }
+    .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .popup-buttons > img {
+        position: absolute;
+        z-index: -10;
+    }
+    .popup-button {
+        position: static;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .popup {
+        width: 100%;
+        right: -100%;
+    }
+    .popup.open {
+        z-index: 1000;
     }
 }
