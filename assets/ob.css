@@ -1031,6 +1031,94 @@ a.fondle:hover:after {
 }
 
 @media (max-width: 480px){
+
+    /* home */
+    .section {
+        padding: 20px;
+    }
+    .section.offset-top {
+        margin-top: 0;
+    }
+    .section.video, .section.full-height {
+        min-height: 0;
+    }
+    .video {
+        height: auto;
+    }
+    .video video {
+        width: 100%;
+        min-height: auto;
+    }
+    .home h2.objectbiography {
+        position: static;
+        text-align: left;
+        margin-left: 20px;
+
+        -webkit-transform: rotate(-2deg);
+        -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        -o-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    .home h1 {
+        position: static;
+        /*color: #181818;*/
+        font-size: 40px;
+        line-height: 45px;
+        margin-left: 20px;
+
+        -webkit-transform: rotate(-2deg);
+        -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+        -o-transform: rotate(-2deg);
+        transform: rotate(-2deg);
+    }
+    .introduction h2 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    h2.h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .introduction h3 {
+        margin-left: 0;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .quotes h2:first-child {
+        margin-left: 0;
+    }
+    .quotes h2:nth-child(2) {
+        margin-left: 0;
+    }
+    .home p {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .section p.quote {
+        position: static;
+        font-size: 36px;
+        line-height: 46px;
+        margin-left: 20px;
+    }
+    .introduction.text-center-left p,
+    .introduction.text-bottom-left p,
+    .introduction.text-bottom-center p{
+        position: static;
+    }
+    .introduction.text-center-left p {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+    .object {
+        display: none;
+    }
+
+    /* content */
     h1, .h1, .title, .mess-quote {
         font-size: 70px;
     }
