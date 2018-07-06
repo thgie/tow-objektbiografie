@@ -26,12 +26,11 @@ h2.objectbiography {
     position: fixed;
     top: 30px;
     left: 20px;
-    font-size: 34px;
-    line-height: 44px;
-    transform: rotate(-5deg);
+    font-size: 17px;
+    line-height: 22px;
+    font-style: none;
     z-index: 1000;
     text-align: left;
-    font-style: italic;
 }
 .home h2.objectbiography {
     position: fixed;
@@ -411,9 +410,9 @@ ol {
     position: absolute;
     display: inline-block;
     padding: 0px 10px 10px 0px;
-    font-size: 34px;
-    line-height: 34px;
     text-align: left;
+    font-size: 30px;
+    line-height: 34px;
 }
 .popup-button span {
     background: #181818;
@@ -733,20 +732,24 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 300;
 }
 h1, .h1, .title, .mess-quote {
-    font-size: 100px;
-    line-height: 110px;
+    font-size: 80px;
+    line-height: 83px;
+}
+.article h1 {
+    margin-top: 114px;
 }
 h2.h1 {
 	font-size: 80px;
 	line-height: 90px;
 }
 .introduction h2 {
-    font-size: 60px;
-    line-height: 72px;
+    font-size: 40px;
+    line-height: 45px;
     margin-bottom: 40px;
 }
 .home h2 p.caption {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 30px;
 }
 h3 {
     font-size: 28px;
@@ -763,34 +766,35 @@ h3 {
     line-height: 38px;
 }
 .introduction h3 {
-    font-size: 60px;
-    line-height: 72px;
+    font-size: 40px;
+    line-height: 45px;
     margin-left: 200px;
     margin-bottom: 80px;
     max-width: 900px;}
 h4 {
     display: inline-block;
     margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 18px;
     padding-bottom: 5px;
     font-weight: 300;
+    margin-bottom: 4px;
+    font-size: 17px;
+    line-height: 17px;
+    box-shadow: 4px 0px 0 black, -2px 0 0 black;
 }
 .home h4 {
     line-height: 34px;
 }
 p, ul, ol {
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 17px;
+    line-height: 24px;
 }
 .home p, .article p, .article ul {
     max-width: 800px;
     margin-bottom: 30px;
 }
 .home p {
-    font-size: 36px;
-    line-height: 48px;
+    font-size: 17px;
+    line-height: 24px;
     margin-bottom: 80px;
     max-width: 1200px;
 }
@@ -847,18 +851,18 @@ p, ul, ol {
     line-height: 50px;
 }
 .pull-quote {
-    font-size: 40px;
-    line-height: 48px;
     transform: rotate(-3deg);
     font-style: italic;
+    font-size: 30px;
+    line-height: 38px;
 }
 .pull-quote-large {
     font-size: 80px;
     line-height: 88px;
 }
 .caption {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 13px;
+    line-height: 18px;
 }
 .vimeo {
 	margin-bottom: 30px;
