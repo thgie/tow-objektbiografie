@@ -239,8 +239,12 @@ function scrolling(){
 					document.querySelector('.toc li[data-target="'+scrolls[s].dataset.hash+'"]').classList.add('active')
 					if(scrolls[s].dataset.hash != 'introduction'){
 						document.querySelector('.toc').classList.add('show')
-						document.querySelector('.home .nav').classList.add('show')
 					}
+				}
+			}
+			if(scrolls[s].dataset.scroll == 'show-nav'){
+				if(scrolls[s].getBoundingClientRect().top < c && scrolls[s].getBoundingClientRect().top > 0 - c) {
+					document.querySelector('.home .nav').classList.add('show')
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
