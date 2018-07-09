@@ -33,10 +33,10 @@ h2.objectbiography {
     text-align: left;
 }
 .home h2.objectbiography {
-    position: fixed;
+    /*position: fixed;
     left: auto;
     right: 30px;
-    text-align: right;
+    text-align: right;*/
 }
 h2.objectbiography > a {
     background: black;
@@ -50,8 +50,8 @@ h2.objectbiography > a {
     z-index: 1000;
 }
 .home .nav {
-    left: auto;
-    right: 30px;
+    /*left: auto;
+    right: 30px;*/
 }
 .nav > a {
     display: inline-block;
@@ -146,10 +146,10 @@ h2.objectbiography > a {
 
 .toc {
     position: fixed;
-    right: 30px;
+    left: 30px;
     top: 220px;
     z-index: 750;
-    text-align: right;
+    text-align: left;
 
 	opacity: 0;
 
@@ -163,9 +163,18 @@ h2.objectbiography > a {
 	opacity: 1;
 }
 .toc li:before {
-    content: none;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .5;
 }
 .toc li {
+    position: relative;
     -webkit-transform: rotate(-5deg);
     -ms-transform: rotate(-5deg);
     transform: rotate(-5deg);
@@ -176,6 +185,13 @@ h2.objectbiography > a {
     color: rgba(255, 255, 255, 0.75);
     background: rgba(0, 0, 0, 0.5);
     padding: 0 7px;
+    opacity: 0;
+}
+.toc:hover li:before {
+    display: none;
+}
+.toc:hover li a {
+    opacity: 1;
 }
 .toc li a:hover {
     color: rgba(255, 255, 255, 0.9);
@@ -184,6 +200,10 @@ h2.objectbiography > a {
 .toc li.active a {
     color: #181818;
     background: rgba(255, 255, 255, 0.9);
+}
+.toc li.active:before {
+    opacity: 1;
+    border: 1px solid white;
 }
 
 /* home */
