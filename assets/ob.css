@@ -53,6 +53,12 @@ h2.objectbiography > a {
     /*left: auto;
     right: 30px;*/
 }
+.home .nav {
+    opacity: 0;
+}
+.home .nav.show {
+    opacity: 1;
+}
 .nav > a {
     display: inline-block;
     padding-bottom: 10px;
@@ -1197,12 +1203,6 @@ a.fondle:hover:after {
         right: 0;
         top: 0;
         width: 100%;
-    }
-    .home .nav {
-        opacity: 0;
-    }
-    .home .nav.show {
-        opacity: 1;
     }
     .nav h2, .footer h2 {
         margin-bottom: 0;
