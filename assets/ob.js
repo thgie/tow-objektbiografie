@@ -239,6 +239,7 @@ function scrolling(){
 					document.querySelector('.toc li[data-target="'+scrolls[s].dataset.hash+'"]').classList.add('active')
 					if(scrolls[s].dataset.hash != 'introduction'){
 						document.querySelector('.toc').classList.add('show')
+						document.querySelector('.home .nav').classList.add('show')
 					}
 				}
 			}

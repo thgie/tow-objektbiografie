@@ -1198,6 +1198,12 @@ a.fondle:hover:after {
         top: 0;
         width: 100%;
     }
+    .home .nav {
+        opacity: 0;
+    }
+    .home .nav.show {
+        opacity: 1;
+    }
     .nav h2, .footer h2 {
         margin-bottom: 0;
     }
