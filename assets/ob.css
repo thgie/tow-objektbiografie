@@ -78,6 +78,10 @@ h2.objectbiography > a {
     left: -100%;
     padding: 40px;
     background: white;
+
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
 }
 .nav > ul:hover,
 .nav > a:hover + ul {
@@ -432,15 +436,23 @@ ol {
 .popup-button span {
     background: #181818;
     color: #fff;
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
 }
 .popup-button span:last-child {
-    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
 }
 .popup-button:hover span:first-child {
-    display: none;
+    opacity: 0;
 }
 .popup-button:hover span:last-child {
-    display: inline;
+    opacity: 1;
 }
 
 .popup {
@@ -450,7 +462,7 @@ ol {
     right: -70%;
     height: 100%;
     width: 70%;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     border-top: 1px solid #181818;
     border-left: 1px solid #181818;
     border-bottom: 1px solid #181818;
@@ -481,7 +493,7 @@ ol {
     border-top: 1px solid #181818;
 }
 .popup > div.pdf-wrapper {
-    padding: 40px;
+    padding: 20px;
     border-bottom: 1px solid #181818;
 }
 .popup h3 {
@@ -503,20 +515,37 @@ ol {
 }
 .close-button {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 20px;
 
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+    border: none !important;
 
     transition: .25s;
     cursor: pointer;
-
-    transform: rotate(0);
 }
-.close-button:hover {
-    background: #181818;
+.close-button:before,
+.close-button:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 1px;
+    border-bottom: 1px solid black;
+}
+.close-button:before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.close-button:after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 /* popup gallery */
@@ -647,7 +676,7 @@ a[data-skip] {
 /* audio */
 .audioplayer {
     position: relative;
-    height: 140px;
+    height: 90px;
     width: 100%;
     border: 1px solid #181818;
     cursor: pointer;
@@ -660,7 +689,7 @@ a[data-skip] {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 30px 0 30px 40px;
+    border-width: 20px 0 20px 30px;
     border-color: transparent transparent transparent #181818;
 
     -webkit-transform: translateY(-50%);
@@ -672,9 +701,29 @@ a[data-skip] {
 .photoloop-wrapper .playbutton {
     pointer-events: none;
     border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+
+    z-index: 1000;
 }
 .playbutton.hide {
-    display: none;
+    border-color: transparent;
+}
+.playbutton.hide:before,
+.playbutton.hide:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -15px;
+    width: 10px;
+    height: 30px;
+    background: #fff;
+
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+}
+.playbutton.hide:before {
+    left: -30px;
+}
+.playbutton.hide:after {
+    left: -10px;
 }
 .audioplayer .progress {
     position: absolute;
