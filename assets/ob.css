@@ -75,23 +75,13 @@ h2.objectbiography > a {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    left: -100%;
     padding: 40px;
     background: white;
-
-    -webkit-transform:  translateY(-100%);
-    -ms-transform:  translateY(-100%);
-    transform:  translateY(-100%);
 }
 .nav > ul:hover,
 .nav > a:hover + ul {
-    -webkit-transform:  translateY(0);
-    -ms-transform:  translateY(0);
-    transform:  translateY(0);
-
-    -webkit-transition: .25s;
-    -o-transition: .25s;
-    transition: .25s;
+    left: 0;
 
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
@@ -122,7 +112,6 @@ h2.objectbiography > a {
 .nav ul > li > a,
 .footer ul > li > a {
     display: inline-block;
-    margin-bottom: 10px;
 }
 .nav ul > li > ul + a,
 .footer ul > li > ul + a {
@@ -1222,9 +1211,6 @@ a.fondle:hover:after {
     .nav ul > li li, .footer ul > li li {
         font-size: 16px;
         line-height: 18px;
-    }
-    .nav ul > li > a, .footer ul > li > a {
-        margin-bottom: 5px;
     }
     .nav > ul > li > a, .footer > ul > li > a {
         margin-bottom: 10px;
