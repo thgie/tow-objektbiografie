@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Relative Faux';
+    src: url('Relative-Faux.woff2') format('woff2'),
+        url('Relative-Faux.woff') format('woff'),
+        url('Relative-Faux.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Relative Book';
+    src: url('Relative-BookItalic.woff2') format('woff2'),
+        url('Relative-BookItalic.woff') format('woff'),
+        url('Relative-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+

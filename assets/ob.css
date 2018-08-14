@@ -13,45 +13,44 @@ body {
     position: relative;
     height: 100%;
     max-width: 1440px;
-    /* margin: 0 auto; */
-    padding-left: 100px;
-    padding-bottom: 50px;
+    padding: 30px 0 50px 200px;
 }
 .home .wrapper {
     max-width: none;
     padding-left: 0;
     padding-bottom: 0;
 }
-h2.objectbiography {
+h2.logo {
     position: fixed;
-    top: 30px;
-    left: 20px;
+    top: 40px;
+    left: 40px;
     font-size: 17px;
     line-height: 22px;
     font-style: none;
     z-index: 1000;
     text-align: left;
+
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
 }
-.home h2.objectbiography {
-    /*position: fixed;
-    left: auto;
-    right: 30px;
-    text-align: right;*/
+h2.logo .sublogo {
+    font-size: 14px;
 }
-h2.objectbiography > a {
-    background: black;
-    box-shadow: 5px 0 0 black, -5px 0 0 black;
+.home h2.logo a {
     color: white;
+    -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    -moz-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    -ms-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    -o-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    text-shadow: 0 0 20px rgba(0, 0, 0, .25);
 }
+
 .nav {
     position: fixed;
-    left: 30px;
-    top: 150px;
+    left: 40px;
+    top: 200px;
     z-index: 1000;
-}
-.home .nav {
-    /*left: auto;
-    right: 30px;*/
 }
 .home .nav {
     opacity: 0;
@@ -61,15 +60,10 @@ h2.objectbiography > a {
 }
 .nav > a {
     display: inline-block;
-    padding-bottom: 10px;
     -webkit-transition: 0.25s;
     -o-transition: 0.25s;
     transition: 0.25s;
     transition-delay: 2s;
-}
-.nav > a:hover {
-    transform: rotate(-10deg);
-    transition-delay: 0s;
 }
 .nav > ul {
     position: fixed;
@@ -88,10 +82,6 @@ h2.objectbiography > a {
     left: 0;
 
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-}
-.nav > a > img {
-    width: 40px;
-    height: auto;
 }
 
 .nav a:hover,
@@ -145,8 +135,8 @@ h2.objectbiography > a {
 
 .toc {
     position: fixed;
-    left: 30px;
-    top: 220px;
+    left: 45px;
+    top: 240px;
     z-index: 750;
     text-align: left;
 
@@ -210,23 +200,18 @@ h2.objectbiography > a {
     position: relative;
     width: 100%;
     /* min-height: 100%; */
-    padding: 80px;
+    padding: 80px 0 80px 200px;
 
     background-size: cover;
     background-position: center;
 }
 .section.video {
-    padding: 0;
+    padding: 0 0 0 200px;
 }
 .section.video,
 .section.full-height {
     min-height: 100%;
-}
-.section.align-right {
-    text-align: right;
-}
-.section.offset-top {
-    margin-top: -90px;
+    height: auto;
 }
 .introduction {
     position: relative;
@@ -280,10 +265,6 @@ img.phonepiece.move {
 .header.hide {
     opacity: 0;
 }
-.header h1 {
-    transform: rotate(-5deg);
-    margin-bottom: 50px;
-}
 .home h1 {
     max-width: 1200px;
     opacity: 0;
@@ -300,14 +281,11 @@ img.phonepiece.move {
 .home h1.show {
     opacity: 1;
 }
-.article-main h1 {
-    margin-top: 100px
-}
 .header p {
     padding-left: 125px;
     padding-right: 125px;
 }
-.header p span, h4, .home h3 span {
+.header p span, .home h3 span {
     background: black;
     color: white;
     box-shadow: 8px 0px 0 black, -2px 0 0 black;
@@ -767,8 +745,8 @@ a[data-skip] {
     margin-bottom: 10px;
 }
 .footer p, .section.final-quote p {
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 17px;
+    line-height: 24px;
 }
 .footer p.caption, .impressum p.caption, .section.final-quote p.caption {
     font-size: 14px;
@@ -787,7 +765,7 @@ a[data-skip] {
 
 /* typo */
 body {
-    font-family: "Relative Book", sans-serif;
+    font-family: 'Relative Faux', sans-serif;
     color: #000000;
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -795,26 +773,28 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0;
     font-weight: 300;
 }
+.article h1 {
+    margin-bottom: 70px;
+}
 h1, .h1, .title, .mess-quote {
     font-size: 80px;
     line-height: 83px;
 }
-.article h1 {
-    margin-top: 114px;
+.super-quote {
+	font-size: 40px;
+	line-height: 45px;
+    -webkit-transform: rotate(-4deg);
+    -ms-transform: rotate(-4deg);
+    transform: rotate(-4deg);
 }
-h2.h1 {
-	font-size: 80px;
-	line-height: 90px;
+.super-quote .caption {
+    font-size: 17px;
 }
 .introduction h2 {
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 30px;
+    line-height: 35px;
     margin-bottom: 40px;
     max-width: 80%;
-}
-.home h2 p.caption {
-    font-size: 26px;
-    line-height: 30px;
 }
 h3 {
     font-size: 28px;
@@ -831,8 +811,8 @@ h3 {
     line-height: 38px;
 }
 .introduction h3 {
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 30px;
+    line-height: 35px;
     margin-left: 200px;
     margin-bottom: 80px;
     max-width: 900px;}
@@ -844,7 +824,7 @@ h4 {
     margin-bottom: 4px;
     font-size: 17px;
     line-height: 17px;
-    box-shadow: 4px 0px 0 black, -2px 0 0 black;
+    font-weight: bold;
 }
 .home h4 {
     line-height: 34px;
@@ -854,7 +834,7 @@ p, ul, ol {
     line-height: 24px;
 }
 .home p, .article p, .article ul {
-    max-width: 800px;
+    max-width: 80%;
     margin-bottom: 30px;
 }
 .home p {
@@ -868,7 +848,6 @@ p, ul, ol {
 }
 .section p.quote {
     position: absolute;
-    transform: rotate(-3deg);
     max-width: 800px;
     left: 300px;
     bottom: -160px;
@@ -879,11 +858,6 @@ p, ul, ol {
 .introduction p span {
     background: rgba(255, 255, 255, 0.75);
     box-shadow: 8px 0px 0 rgba(255, 255, 255, 0.75), -2px 0 0 rgba(255, 255, 255, 0.75);
-}
-.introduction.black-label p span {
-    color: #fff;
-    background: black;
-    box-shadow: 8px 0px 0 black, -2px 0 0 black;
 }
 .introduction.text-bottom-left p {
     position: absolute;
@@ -911,11 +885,8 @@ p, ul, ol {
 .impressum p {
     margin-bottom: 0;
 }
-.introtext, .sis-lead, .mess-lead {
-    font-size: 34px;
-    line-height: 50px;
-}
 .pull-quote {
+    font-family: 'Relative Book', sans-serif;
     transform: rotate(-3deg);
     font-style: italic;
     font-size: 30px;
@@ -1009,6 +980,7 @@ button[type="button"] {
 
 /* objects */
 .object {
+    display: none;
     position: absolute;
     z-index: 100;
 }
