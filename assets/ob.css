@@ -340,24 +340,35 @@ ol {
 
 /* shy image */
 .shy-image {
+    width: 100%;
+    height: 1px;
     position: relative;
+    z-index: 1000;
 }
-.shy-image img {
+.shy-image div {
     position: absolute;
+    display: inline-block;
+
+    max-width: 500px;
 
     right: 180px;
     top: -5px;
-    width: 50%;
-    height: auto;
 
     z-index: -500;
-    opacity: 0.25;
     pointer-events: none;
-
+    opacity: 0.25;
     transition: opacity 0.25s;
 }
-.shy-image.not-so-shy-anymore img {
-    z-index: 0;
+.shy-image img {
+    width: 100%;
+    height: auto;
+}
+.shy-image p {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 1);
+}
+.shy-image.not-so-shy-anymore div {
+    z-index: 1000;
     opacity: 1;
 }
 
@@ -448,9 +459,9 @@ ol {
     padding-top: 20px;
     overflow-y: auto;
 
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    transition: .5s;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
 .popup.intro {
     right: -70%;
@@ -458,6 +469,7 @@ ol {
     background: rgba(255, 255, 255, 0.9);
 }
 .popup.open {
+    position: fixed;
     opacity: 1;
     right: 0;
 }
@@ -1020,6 +1032,7 @@ button[type="button"] {
 /* fondling */
 a.fondle {
     position: relative;
+    text-decoration: none;
 }
 a.fondle:after {
     content: '';
