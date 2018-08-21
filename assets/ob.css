@@ -225,10 +225,10 @@ h2.logo .sublogo {
 img.phonepiece {
     position: absolute;
     transform: rotate(12deg);
-    top: 400px;
+    top: 100px;
     z-index: -1;
-    height: 700px;
-    right: 20%;
+    height: 500px;
+    left: 20%;
 
     -webkit-transition: 20s;
     -o-transition: 20s;
@@ -780,6 +780,9 @@ body {
     font-family: 'Relative Faux', sans-serif;
     color: #000000;
 }
+i {
+    font-family: 'Relative Book';
+}
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -805,7 +808,8 @@ h1, .h1, .title, .mess-quote {
 .introduction h2 {
     font-size: 30px;
     line-height: 35px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 80px;
     max-width: 80%;
 }
 h3 {
@@ -823,11 +827,11 @@ h3 {
     line-height: 38px;
 }
 .introduction h3 {
+    max-width: 80%;
     font-size: 30px;
     line-height: 35px;
-    margin-left: 200px;
-    margin-bottom: 80px;
-    max-width: 900px;}
+    margin-bottom: 30px;
+}
 h4 {
     display: inline-block;
     margin-top: 10px;
@@ -912,6 +916,12 @@ p, ul, ol {
     font-size: 13px;
     line-height: 18px;
 }
+.blacked {
+    display: inline-block;
+    background-color: #181818 !important;
+    padding: 0 6px 0 2px;
+    color: #fff;
+}
 .vimeo {
 	margin-bottom: 30px;
 }
@@ -933,8 +943,12 @@ p, ul, ol {
     height: 100%;
 }
 .video video {
-    min-width: auto;
     min-height: 100%;
+    min-width: auto;
+}
+.introduction.video video {
+    width: 100%;
+    height: auto;
 }
 .popup .video video {
     max-width: 100%;
