@@ -505,7 +505,7 @@ ol {
 }
 .close-button {
     position: absolute;
-    top: 30px;
+    top: 15px;
     right: 20px;
 
     width: 30px;
@@ -522,7 +522,7 @@ ol {
     display: inline-block;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 15px;
     width: 30px;
     height: 1px;
     border-bottom: 1px solid black;
