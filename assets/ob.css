@@ -54,24 +54,36 @@ h2.logo .sublogo {
 }
 .home .nav {
     opacity: 0;
+
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
 }
 .home .nav.show {
     opacity: 1;
 }
 .nav > a {
     display: inline-block;
-    -webkit-transition: 0.25s;
-    -o-transition: 0.25s;
-    transition: 0.25s;
-    transition-delay: 2s;
+    position: relative;
+    left: -5px;
+    top: -10px;
+
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 9px;
 }
 .nav > ul {
     position: fixed;
     width: 100%;
-    top: 0;
-    left: -100%;
+    top: -100%;
+    left: 0;
     padding: 40px;
     background: white;
+
+    opacity: 0;
 
     -webkit-transition: .5s;
     -o-transition: .5s;
@@ -79,7 +91,8 @@ h2.logo .sublogo {
 }
 .nav > ul:hover,
 .nav > a:hover + ul {
-    left: 0;
+    top: 0;
+    opacity: 1;
 
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
