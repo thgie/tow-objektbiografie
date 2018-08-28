@@ -966,16 +966,19 @@ p, ul, ol {
     height: auto;
 }
 .video-background {
-    position: absolute;
+    /* position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100%; */
 }
 .video-background video {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
     min-width: 100%;
     min-height: 100%;
 }
