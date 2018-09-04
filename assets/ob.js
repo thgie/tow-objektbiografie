@@ -249,6 +249,10 @@ function scrolling(){
 			}
 			if(scrolls[s].dataset.scroll == 'video'){
 				if(scrolls[s].getBoundingClientRect().top < c && scrolls[s].getBoundingClientRect().top > 0 - c) {
+
+					scrolls[s].volume = 0
+					video_on(scrolls[s])
+
 					var promise = scrolls[s].play();
 					if (promise !== undefined) {
 					  promise.then(_ => {
@@ -258,7 +262,7 @@ function scrolling(){
 					  });
 					}
 				} else {
-					scrolls[s].pause()
+					video_off(scrolls[s])
 				}
 			}
 			if(scrolls[s].dataset.scroll == 'intro'){
@@ -359,6 +363,39 @@ function video_background() {
 
 		}
 	}
+}
+
+function video_on(video) {
+
+    var fadePoint = video.duration + 2;
+
+    var fadeAudio = setInterval(function () {
+
+        if ((video.currentTime <= fadePoint) && (video.volume <= 0.75)) {
+            video.volume += 0.05;
+        }
+        if (video.volume >= 0.75) {
+            clearInterval(fadeAudio);
+        }
+    }, 200);
+
+}
+
+function video_off(video) {
+
+    var fadePoint = video.duration + 2;
+
+    var fadeAudio = setInterval(function () {
+        if ((video.currentTime <= fadePoint) && (video.volume >= 0.05)) {
+            video.volume -= 0.05;
+        }
+        if (video.volume <= 0.05) {
+			video.pause()
+			video.volume = 0
+            clearInterval(fadeAudio);
+        }
+    }, 200);
+
 }
 
 window.addEventListener('resize', function() {
