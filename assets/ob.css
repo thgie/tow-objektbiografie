@@ -146,6 +146,34 @@ h2.logo .sublogo {
     line-height: 30px;
 }
 
+a.arrow-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    padding: 13px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s;
+}
+a.arrow-down:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+a.arrow-down img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 3px;
+
+    pointer-events: none;
+}
+
 .toc {
     position: fixed;
     left: 45px;

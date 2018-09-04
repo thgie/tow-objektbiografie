@@ -20,6 +20,11 @@ window.addEventListener('load', function(){
 		})
 	}
 
+	document.querySelector('.arrow-down').addEventListener('click', function(){
+		var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		scroll(document.querySelector('html'), wh, 500)
+	})
+
 })
 
 
