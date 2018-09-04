@@ -120,6 +120,9 @@ h2.logo .sublogo {
 .footer ul > li > a {
     display: inline-block;
 }
+.nav ul > li > ul > li > a {
+    line-height: 18px;
+}
 .nav ul > li > ul + a,
 .footer ul > li > ul + a {
     margin-top: 30px;
@@ -131,8 +134,8 @@ h2.logo .sublogo {
 .nav > ul > li > a,
 .footer > ul > li > a {
     display: block;
-    margin-bottom: 30px;
-    font-size: 24px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 .nav > ul > li > a.about,
 .footer > ul > li > a.about {
@@ -143,7 +146,8 @@ h2.logo .sublogo {
     float: none;
     width: 100%;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 24px;
+    padding-right: 10px;
 }
 
 a.arrow-down {
