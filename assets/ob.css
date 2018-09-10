@@ -37,13 +37,9 @@ h2.logo {
 h2.logo .sublogo {
     font-size: 14px;
 }
-.home h2.logo a {
-    color: white;
-    -webkit-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
-    -moz-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
-    -ms-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
-    -o-text-shadow: 0 0 20px rgba(0, 0, 0, .25);
-    text-shadow: 0 0 20px rgba(0, 0, 0, .25);
+h2.logo > a {
+    color: #000;
+    background-color: rgba(255, 255, 255, .5);
 }
 
 .nav {
@@ -68,18 +64,17 @@ h2.logo .sublogo {
     left: -5px;
     top: -10px;
 
-    background: white;
+    background: rgba(255, 255, 255, .5);
     width: 40px;
     height: 40px;
-    border-radius: 50%;
     text-align: center;
     padding-top: 9px;
 }
 .nav > ul {
     position: fixed;
     width: 100%;
-    top: -100%;
-    left: 0;
+    top: 0;
+    left: -100%;
     padding: 40px;
     background: white;
 
@@ -89,9 +84,10 @@ h2.logo .sublogo {
     -o-transition: .5s;
     transition: .5s;
 }
+.nav.bottom > ul,
 .nav > ul:hover,
 .nav > a:hover + ul {
-    top: 0;
+    left: 0;
     opacity: 1;
 
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
@@ -104,6 +100,9 @@ h2.logo .sublogo {
 .nav li:before,
 .footer li:before {
     content: none;
+}
+.nav ul {
+    max-width: none;
 }
 .nav ul > li,
 .footer ul > li {
@@ -157,17 +156,10 @@ a.arrow-down {
     transform: translateX(-50%);
     width: 60px;
     padding: 13px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
     -webkit-transition: .25s;
     -o-transition: .25s;
     transition: .25s;
-}
-a.arrow-down:hover {
-    background-color: rgba(255, 255, 255, 1);
 }
 a.arrow-down img {
     width: 100%;
@@ -205,7 +197,6 @@ a.arrow-down img {
     position: absolute;
     left: 0;
     top: 0;
-    opacity: .5;
 }
 .toc li {
     position: relative;
@@ -221,12 +212,14 @@ a.arrow-down img {
     padding: 0 7px;
     opacity: 0;
 }
-.toc:hover li:before {
+/*.toc:hover li.active:before {
     display: none;
 }
-.toc:hover li a {
+.toc:hover li.active a {
     opacity: 1;
-}
+    position: relative;
+    top: -9px;
+}*/
 .toc li a:hover {
     color: rgba(255, 255, 255, 0.9);
     background: rgba(0, 0, 0, 0.9);
@@ -237,7 +230,35 @@ a.arrow-down img {
 }
 .toc li.active:before {
     opacity: 1;
-    border: 1px solid white;
+    background: #fff;
+    border: 1px solid black;
+}
+
+.lang {
+    position: fixed;
+    left: 40px;
+    bottom: 200px;
+    z-index: 1000;
+}
+.lang li:before {
+    content: none;
+}
+.lang li > a {
+    display: inline-block;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    opacity: 0.5;
+}
+.lang li:hover > a {
+    opacity: 1;
+}
+.lang li.active > a {
+    color: #000;
+    background-color: #fff;
+    opacity: 1;
 }
 
 /* home */
@@ -253,9 +274,12 @@ a.arrow-down img {
 .section.video {
     padding: 0 0 0 200px;
 }
-.section.video,
-.section.full-height {
+.section.video {
     min-height: 100%;
+    height: auto;
+}
+.section.full-height {
+    min-height: 90%;
     height: auto;
 }
 .introduction {
@@ -366,6 +390,7 @@ ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    max-width: 800px;
 }
 ul > li {
     position: relative;
@@ -856,6 +881,7 @@ h1, .h1, .title, .mess-quote {
     line-height: 35px;
     margin-top: 30px;
     margin-bottom: 80px;
+    max-width: 800px;
 }
 h3 {
     font-size: 28px;
@@ -875,6 +901,7 @@ h3 {
     font-size: 30px;
     line-height: 35px;
     margin-bottom: 30px;
+    max-width: 800px;
 }
 h4 {
     display: inline-block;
@@ -904,6 +931,7 @@ p, ul, ol {
 }
 .introduction p {
     margin-bottom: 40px;
+    max-width: 800px;
 }
 .section p.quote {
     position: absolute;
