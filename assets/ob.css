@@ -236,8 +236,8 @@ a.arrow-down img {
 
 .lang {
     position: fixed;
-    left: 40px;
-    bottom: 200px;
+    right: 40px;
+    bottom: 40px;
     z-index: 1000;
 }
 .lang li:before {
@@ -932,6 +932,10 @@ p, ul, ol {
 .introduction p {
     margin-bottom: 40px;
     max-width: 800px;
+}
+.introduction p.caption {
+    font-size: 13px;
+    line-height: 18px;
 }
 .section p.quote {
     position: absolute;
