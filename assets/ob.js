@@ -13,12 +13,12 @@ window.addEventListener('load', function(){
 
 	var ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
 
-	if(ww < 768){
+	/*if(ww < 768){
 		document.querySelector('.wrapper').classList.add('warning')
 		document.querySelector('.wrapper.warning').addEventListener('click', function(){
 			this.classList.remove('warning')
 		})
-	}
+	}*/
 
 	document.querySelector('.arrow-down').addEventListener('click', function(){
 		var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -276,7 +276,7 @@ function scrolling(){
 		}
 	}
 
-    if (getDocHeight() == getScrollXY()[1] + window.innerHeight) {
+    if (getDocHeight() == getScrollXY()[1] + window.innerHeight && document.querySelector('body.home')) {
         document.querySelector('.nav').classList.add('bottom')
     } else {
         document.querySelector('.nav').classList.remove('bottom')
