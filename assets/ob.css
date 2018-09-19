@@ -48,7 +48,7 @@ h2.logo > a {
     top: 200px;
     z-index: 1000;
 }
-.home .nav {
+/*.home .nav {
     opacity: 0;
 
     -webkit-transition: .5s;
@@ -57,7 +57,7 @@ h2.logo > a {
 }
 .home .nav.show {
     opacity: 1;
-}
+}*/
 .nav > a {
     display: inline-block;
     position: relative;
