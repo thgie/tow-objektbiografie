@@ -608,6 +608,16 @@ ol {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }
+.popup_click_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: transparent;
+    cursor: pointer;
+}
 
 /* popup gallery */
 .gallery-wrapper {
@@ -647,15 +657,47 @@ ol {
     font-style: italic;
     font-size: 24px;
 }
+a[data-previous] img, a[data-skip] img {
+    width: 100%;
+    height: auto;
+}
+a[data-previous] {
+    width: 120px;
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
 a[data-skip] {
     width: 120px;
     display: inline-block;
     float: right;
     margin-right: 20px;
 }
+a[data-skip] + div, a[data-skip] + p {
+    padding-top: 10px;
+    clear: both;
+}
+
+ .photoloop-wrapper a[data-skip] + div,
+ .photoloop-wrapper a[data-skip] + p {
+     padding-top: 0;
+ }
+
+ .photoloop-wrapper + div .caption {
+     padding-right: 150px;
+ }
+
+ .photoloop[data-playing="true"] .playbutton.hide {
+     display: none;
+ }
 
 /* photoloop */
 .photoloop-wrapper {
+    position: relative;
     max-width: 800px;
 }
 .popup > div.photoloop-wrapper {

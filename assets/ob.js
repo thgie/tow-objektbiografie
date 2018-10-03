@@ -78,7 +78,7 @@ for(var p in loops){
 	}
 }
 function create_loop(loop){
-	var timer, count = loop.nextElementSibling;
+	var timer, count = loop.nextElementSibling.nextElementSibling.nextElementSibling;
 
 	loop.dataset.playing = 'false'
 	loop.dataset.total = loop.querySelectorAll('img').length
@@ -101,19 +101,41 @@ function create_loop(loop){
 			}, 3000)
 			loop.querySelector('.playbutton').classList.add('hide')
 		} else {
-			// loop.dataset.playing = 'false'
-			// clearInterval(timer)
-			// loop.querySelector('.playbutton').classList.remove('hide')
+			loop.dataset.playing = 'false'
+			clearInterval(timer)
+			loop.querySelector('.playbutton').classList.remove('hide')
 
-			loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
+			/*loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
 			if(loop.dataset.current < parseInt(loop.dataset.total) - 1){
 				loop.dataset.current = parseInt(loop.dataset.current) + 1
 			} else {
 				loop.dataset.current = 0
 			}
 			loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
-			count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
+			count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total*/
 		}
+	})
+
+	loop.parentNode.querySelector('[data-skip]').addEventListener('click', function(){
+		loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
+		if(loop.dataset.current < parseInt(loop.dataset.total) - 1){
+			loop.dataset.current = parseInt(loop.dataset.current) + 1
+		} else {
+			loop.dataset.current = 0
+		}
+		count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
+		loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
+	})
+
+	loop.parentNode.querySelector('[data-previous]').addEventListener('click', function(){
+		loop.querySelectorAll('img')[loop.dataset.current].classList.remove('show')
+		if(loop.dataset.current - 1 >= 0){
+			loop.dataset.current = parseInt(loop.dataset.current) - 1
+		} else {
+			loop.dataset.current = loop.dataset.total - 1
+		}
+		count.innerHTML = (parseInt(loop.dataset.current) + 1) + '/' + loop.dataset.total
+		loop.querySelectorAll('img')[loop.dataset.current].classList.add('show')
 	})
 }
 
@@ -161,6 +183,9 @@ document.body.addEventListener('keyup', function(e){
 		for(var p in popups){
 			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
 		}
+
+		var popup_click_background = document.querySelector('.popup_click_background')
+		popup_click_background.parentNode.removeChild(popup_click_background)
 	}
 })
 document.body.addEventListener('mouseover', function(e) {
@@ -189,11 +214,24 @@ document.body.addEventListener('click', function(e){
 		}
 		document.querySelector('[name='+target+']').classList.add('open')
 
+		var popup_click_background = document.createElement('div')
+		popup_click_background.classList.add('popup_click_background')
+		document.querySelector('body').appendChild(popup_click_background)
+
+		popup_click_background.addEventListener('click', function(){
+			this.parentNode.removeChild(this)
+			for(var p in popups){
+				if(popups[p].style != undefined){ popups[p].classList.remove('open') }
+			}
+		})
+
 		var top = document.querySelector('[name='+target+']').getBoundingClientRect().top;
 		scroll(document.querySelector('html'), top, 500)
 	}
 	if(e.target.classList.contains('close-button')) {
 		e.target.parentNode.classList.remove('open')
+		var popup_click_background = document.querySelector('.popup_click_background')
+		popup_click_background.parentNode.removeChild(popup_click_background)
 	}
 })
 
@@ -316,8 +354,16 @@ var skips = document.querySelectorAll('[data-skip]')
 for(var s in skips){
 	if(skips[s].style != undefined){
 		skips[s].addEventListener('click', function(){
-			console.log(this.previousElementSibling)
-			this.previousElementSibling.scrollLeft += this.previousElementSibling.offsetWidth * 0.5;
+			this.previousElementSibling.previousElementSibling.scrollLeft += this.previousElementSibling.previousElementSibling.offsetWidth * 0.5;
+		})
+	}
+}
+
+var prevs = document.querySelectorAll('[data-previous]')
+for(var s in prevs){
+	if(prevs[s].style != undefined){
+		prevs[s].addEventListener('click', function(){
+			this.previousElementSibling.scrollLeft -= this.previousElementSibling.offsetWidth * 0.8;
 		})
 	}
 }
