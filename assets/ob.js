@@ -20,10 +20,12 @@ window.addEventListener('load', function(){
 		})
 	}*/
 
-	document.querySelector('.arrow-down').addEventListener('click', function(){
-		var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		scroll(document.querySelector('html'), wh, 500)
-	})
+	if(document.querySelector('.arrow-down')){
+		document.querySelector('.arrow-down').addEventListener('click', function(){
+			var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+			scroll(document.querySelector('html'), wh, 500)
+		})
+	}
 
 })
 
@@ -173,6 +175,17 @@ function jump(){
 			if(popups[p].style != undefined){ popups[p].classList.remove('open') }
 		}
 		document.querySelector(target).classList.add('open')
+
+		var popup_click_background = document.createElement('div')
+		popup_click_background.classList.add('popup_click_background')
+		document.querySelector('body').appendChild(popup_click_background)
+
+		popup_click_background.addEventListener('click', function(){
+			this.parentNode.removeChild(this)
+			for(var p in popups){
+				if(popups[p].style != undefined){ popups[p].classList.remove('open') }
+			}
+		})
     }, 100);
 }
 
