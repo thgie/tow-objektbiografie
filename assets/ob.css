@@ -1099,6 +1099,27 @@ p, ul, ol {
     height: 100%;
     position: absolute;
 } */
+@media (max-width: 1080px){
+    .wrapper {
+        padding-top: 0;
+    }
+    .section.full-height {
+        padding: 0;
+        min-height: 0;
+        height: auto;
+        margin-bottom: -4px;
+    }
+    .video-background video {
+        position: static;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        width: 100%;
+        height: auto;
+        min-width: auto;
+        min-height: auto;
+    }
+}
 
 a, a:hover, a:visited, a:active {
     color: #181818;
